@@ -36,35 +36,41 @@ a:hover {
     font-size: 20px;
 }
 
-#task {
-    margin-left: 200px;
+#list {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     font-size: medium;
     border-style: solid;
     block-size: 40px;
     border-width: 1px;
     border-radius: 10px;
-    align-items: center;
+    width: 1000px;
 }
 
-#task input {
-    margin: 10px;
+/* botao */
+#new_task {
+    margin-right: 950px;
 }
 
 #task_name {
     margin-right: auto;
+    width: 800px;
+}
+
+#checkbox {
+    margin-left: 10px;
 }
 
 #edit {
     margin-right: 10px;
-}
-
-@media screen and (max-height: 450px) {
-    #sidenav {
-        padding-top: 15px;
-    }
-
-    #sidenav a {
-        font-size: 18px;
-    }
 }

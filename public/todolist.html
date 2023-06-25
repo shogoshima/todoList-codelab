@@ -23,13 +23,16 @@
         <p>
             projeto codelab todo list coisa
         </p>
-        <button id="new_task">+</button>
-    </div>
-    <div id="task">
-        <input type="checkbox">
-        <p id="task_name">Nome da tarefa</p>
-        <input type="date" id="date">
-        <button id="edit">e</button>
+        <div id="list">
+            <button id="new_task">+</button>
+            <div id="task">
+                <input id="checkbox" type="checkbox"/>
+                <input id="task_name"/>
+                <input id="date" type="date">
+                <button id="remove">r</button>
+                <button id="edit">e</button>
+            </div>
+        </div>
     </div>
     <script type="module" src="todolist.js"></script>
 </body>
