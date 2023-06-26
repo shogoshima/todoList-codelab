@@ -1,3 +1,6 @@
+// se o seu localStorage estiver poluído:
+// localStorage.clear();
+
 // funcao para cadastrar:
 // pega os dados do input (user e pswd) que seriam do document.getElementById.
 // cria um objeto chamado dados, em que teria a senha do usuario e um outro objeto,
@@ -6,7 +9,16 @@
 export function cadastrar(user, pswd) {
     let dados = {
         senha: pswd,
-        todolist: {},
+        todolist: {
+            tarefas: [
+                {
+                    id: 0,
+                    nome: "Exemplo de tarefa",
+                    data: "25/06/2023",
+                    completo: false,
+                }
+            ],
+        },
     }
     if (user == "" || dados.senha == "") {
         alert("Parece que você esqueceu de digitar algo kkk");
@@ -35,7 +47,7 @@ export function login(user, pswd) {
         if (dados.senha == pswd) {
             alert(`Bem vindo(a) de volta, ${user}!`);
             const d = new Date(); 
-            d.setTime(d.getTime() + (15 * 60 * 1000)) // seta o tempo para 15 minutos depois de agora
+            d.setTime(d.getTime() + (60 * 60 * 1000)) // seta o tempo para 60 minutos depois de agora
             let expires = "expires=" + d.toUTCString(); // transforma em string
             document.cookie = "logado=" + user + ";" + expires; // adiciona no formato de um cookie
             window.location.href = "todolist.html"; 

@@ -1,3 +1,5 @@
+import { add } from '/modulos/add.js'
+
 // para pegar o cookie que foi criado na aba de login.
 // isso é so para conseguir pegar o nome do usuário que logou na aba de login
 let user = document.cookie
@@ -9,7 +11,9 @@ let user = document.cookie
 let dados = JSON.parse(localStorage.getItem(user));
 document.querySelector("#bemvindo").innerHTML = `Oi ${user}! sua senha é "${dados.senha}"`;
 
-
+document.querySelector("#new_task").addEventListener("click", () => {
+    add(dados);
+})
 
 
 // so um exemplo de como acho q seria o objeto com o qual vamos trabalhar

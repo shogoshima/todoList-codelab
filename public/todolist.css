@@ -44,7 +44,12 @@ a:hover {
     gap: 10px;
 }
 
-#task {
+/* botao */
+#new_task {
+    margin-right: 950px;
+}
+
+.task {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,20 +62,15 @@ a:hover {
     width: 1000px;
 }
 
-/* botao */
-#new_task {
-    margin-right: 950px;
-}
-
-#task_name {
+.task_name {
     margin-right: auto;
     width: 800px;
 }
 
-#checkbox {
+.checkbox {
     margin-left: 10px;
 }
 
-#edit {
+.edit {
     margin-right: 10px;
 }
