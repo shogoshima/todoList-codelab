@@ -2,6 +2,7 @@ import { add } from '/modulos/add.js';
 import { display } from '/modulos/display.js';
 import { newEnv } from '/modulos/newEnv.js';
 import { displayEnv } from './modulos/displayEnv.js';
+import { changeEnv } from './modulos/changeEnv.js';
 
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
@@ -26,21 +27,19 @@ console.log("dados:", dados);
 display(dados.todolist[env]);
 displayEnv(dados.todolist);
 
+// adiciona uma tarefa
 document.querySelector("#new_task").addEventListener("click", () => {
     add(user, dados, env);
 })
 
+// adiciona uma categoria
 document.querySelector("#new_env").addEventListener("click", () => {
     newEnv(user, dados, display);
 })
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    let name = event.target.value;
-    if (name === "" || name === undefined)
-        return 0;
-    localStorage.setItem('env', name);
-    window.location.href = "todolist.html";
+    changeEnv(dados, event, display, add);
 })
 
 // so um exemplo de como acho q seria o objeto com o qual vamos trabalhar
