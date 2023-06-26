@@ -46,6 +46,7 @@ export function login(user, pswd) {
         // encontrei dado do usuario, preciso verificar se a senha está correta
         if (dados.senha == pswd) {
             alert(`Bem vindo(a) de volta, ${user}!`);
+            localStorage.setItem('env', 'tarefas'); // adiciona onde o usuário vai entrar primeiro
             const d = new Date(); 
             d.setTime(d.getTime() + (60 * 60 * 1000)) // seta o tempo para 60 minutos depois de agora
             let expires = "expires=" + d.toUTCString(); // transforma em string

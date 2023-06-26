@@ -1,8 +1,7 @@
 
 // dados = dados do usuario logado
-export function add(user, dados) {
-    // pega a lista com todas as tasks
-    let lista = dados.todolist.tarefas;
+export function add(user, dados, env) {
+    let lista = dados.todolist[env];
     // o id vai ser o tamanho da lista
     let id = lista.length == undefined ? 0 : lista.length;
     // criando elemento div (task)
@@ -18,7 +17,6 @@ export function add(user, dados) {
                     <button class="remove ${id}" "id="remove">r</button>
                     <button class="edit ${id}" id="edit">e</button>`;
     div.innerHTML = taskInfo;
-    console.log(div);
 
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
@@ -42,6 +40,7 @@ export function add(user, dados) {
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos
     // e quando atualizo a página não vou conseguir ver as tasks que tinha criado nessa função
     // console.log(dados);
+    console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);
 }

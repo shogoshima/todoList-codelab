@@ -1,6 +1,5 @@
-export function display(dados) {
-    // pega a lista salva no localStorage
-    let lista = dados.todolist.tarefas;
+export function display(lista) {
+    document.querySelector("#list").innerHTML = "<button id='new_task'>+</button>";
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
     for (let id = 0; id < lista.length; id++) {

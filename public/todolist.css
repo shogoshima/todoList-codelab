@@ -9,31 +9,24 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: aquamarine;
+    background-color: rgb(122, 186, 165);
     overflow-x: hidden;
     padding: 20px;
 }
 
-#sidenav a {
-    padding: 10px 10px 5px 10px;
-    font-size: 25px;
+#todolist {
+    padding: 5px 5px 5px 5px;
+    font-size: 30px;
     color: #818181;
     display: block;
     text-decoration: none;
-}
-
-a:hover {
-    color: #f1f1f1;
+    text-align: center;
 }
 
 #main {
     margin-left: 160px;
     font-size: 30px;
     padding: 0px 50px;
-}
-
-#todolist {
-    font-size: 20px;
 }
 
 #list {
@@ -73,4 +66,19 @@ a:hover {
 
 .edit {
     margin-right: 10px;
+}
+
+.envs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: medium;
+}
+
+.env_button {
+    border: 0px;
+    background-color: rgb(122, 186, 165);
+    cursor: pointer;
 }
