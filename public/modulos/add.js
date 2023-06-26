@@ -1,9 +1,9 @@
 
 // dados = dados do usuario logado
-export function add(dados) {
+export function add(user, dados) {
     // pega a lista com todas as tasks
     let lista = dados.todolist.tarefas;
-    console.log(lista);
+    // o id vai ser o tamanho da lista
     let id = lista.length == undefined ? 0 : lista.length;
     // criando elemento div (task)
     let div= document.createElement('div');
@@ -37,4 +37,11 @@ export function add(dados) {
         completo: false,
     }
     lista.push(task);
+
+    // preciso atualizar a lista no localStorage
+    // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos
+    // e quando atualizo a página não vou conseguir ver as tasks que tinha criado nessa função
+    // console.log(dados);
+    dados = JSON.stringify(dados);
+    localStorage.setItem(user, dados);
 }
