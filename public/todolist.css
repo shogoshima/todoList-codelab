@@ -53,12 +53,27 @@ body {
     block-size: 40px;
     border-width: 1px;
     border-radius: 10px;
-    width: 1000px;
+    width: 90%;
+    background-color: white;
+}
+
+#task:hover {
+    background-color: beige;
+
+    transition: background-color 1s ease-out;
+
 }
 
 #task_name {
     margin-right: auto;
-    width: 800px;
+    border: 0px;
+    width: 85%;
+}
+
+#task_name:hover {
+    /*background-color: brown;
+    transition: background-color 1s ease-out;*/
+    cursor: pointer;
 }
 
 #checkbox {
@@ -78,6 +93,7 @@ body {
     gap: 10px;
     align-items: center;
     font-size: medium;
+
 }
 
 .env_button {
@@ -108,10 +124,3 @@ body {
     background-color: white;
     transition: background-color 1s ease-out;
 }
-
-/*
-background: #0066A2;
-    color: white;    border-style: outset;
-    border-color: #0066A2;    height: 50px;
-    width: 100px;    font: bold15px arial,sans-serif;
-    text-shadow: none;*/
