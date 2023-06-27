@@ -3,9 +3,11 @@ export function changeEnv(dados, event, display, add) {
     if (name === "" || name === undefined)
         return 0;
     localStorage.setItem('env', name);
-    document.querySelector("#pag_atual").innerHTML = `Você está em: ${name}`;
-    display(dados.todolist[name]);
-    document.querySelector("#new_task").addEventListener("click", () => {
-        add(user, dados, name);
-    })
+    window.location.href = "todolist.html"; 
+
+    // document.querySelector("#pag_atual").innerHTML = `Você está em: ${name}`;
+    // display(dados.todolist[name]);
+    // document.querySelector("#new_task").addEventListener("click", () => {
+    //     add(user, dados, name);
+    // })
 }
