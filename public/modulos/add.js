@@ -27,14 +27,24 @@ export function add(user, dados, env) {
     // so pra verificar se ta certo
     //console.log(document.querySelector("#list").innerHTML);
 
+    // pegar data atual
+    let data = new Date();
+    let day = data.getDate();
+    let month = data.getMonth() + 1;
+    if ((month % 10) == month) {
+        month.toString();
+        month = "0" + month;
+    }
+    let year = data.getFullYear();
     // adicionando nova task na lista:
     let task = {
         id: id,
         nome: "",
-        data: "",
+        data: `${year}-${month}-${day}`,
         completo: false,
     }
     lista.push(task);
+    document.querySelector(`.date-${id}`).value = `${year}-${month}-${day}`;
 
     // preciso atualizar a lista no localStorage
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos

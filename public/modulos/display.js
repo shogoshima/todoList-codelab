@@ -1,5 +1,5 @@
 export function display(lista) {
-    document.querySelector("#list").innerHTML = "<button id='new_task'>+</button>";
+    document.querySelector("#list").innerHTML = "<button id='new_task'>Adicionar</button>";
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
     for (let id = 0; id < lista.length; id++) {
