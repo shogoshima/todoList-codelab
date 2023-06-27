@@ -1,4 +1,4 @@
-export function changeEnv(dados, event, display, add) {
+export function changeEnv(event) {
     let name = event.target.value;
     if (name === "" || name === undefined)
         return 0;

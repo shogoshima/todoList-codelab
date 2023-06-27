@@ -3,6 +3,7 @@ import { display } from '/modulos/display.js';
 import { newEnv } from '/modulos/newEnv.js';
 import { displayEnv } from './modulos/displayEnv.js';
 import { changeEnv } from './modulos/changeEnv.js';
+import { edit } from './modulos/edit.js';
 
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
@@ -39,7 +40,11 @@ document.querySelector("#new_env").addEventListener("click", () => {
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(dados, event, display, add);
+    changeEnv(event);
+})
+
+document.querySelector("#list").addEventListener("input", (event) => {
+    edit(event, user, dados, env);
 })
 
 // so um exemplo de como acho q seria o objeto com o qual vamos trabalhar

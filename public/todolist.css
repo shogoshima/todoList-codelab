@@ -55,16 +55,16 @@ body {
     width: 1000px;
 }
 
-.task_name {
+#task_name {
     margin-right: auto;
     width: 800px;
 }
 
-.checkbox {
+#checkbox {
     margin-left: 10px;
 }
 
-.edit {
+#remove {
     margin-right: 10px;
 }
 

@@ -28,11 +28,22 @@ export function newEnv(user, dados, display) {
             input.setAttribute('class', `env_button ${name}`);
             // cria uma nova chave no todolist com o nome do espaço
             let todolist = dados.todolist;
+
+            // pegar data atual
+            let data = new Date();
+            let day = data.getDate();
+            let month = data.getMonth() + 1;
+            if ((month % 10) == month) {
+                month.toString();
+                month = "0" + month;
+            }
+            let year = data.getFullYear();
+
             todolist[name] = [
                 {
                     id: 0,
                     nome: "Exemplo de tarefa",
-                    data: "25/06/2023",
+                    data: `${year}-${month}-${day}`,
                     completo: false,
                 }
             ];

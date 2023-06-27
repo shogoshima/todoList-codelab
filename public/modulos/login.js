@@ -7,6 +7,15 @@
 // que dessa vez vai ser um objeto com todas as informações das tabelas do todolist
 // apos criar o objeto, ele é transformado em string e é mandado pro localStorage
 export function cadastrar(user, pswd) {
+    let data = new Date();
+    let day = data.getDate();
+    let month = data.getMonth() + 1;
+    if ((month % 10) == month) {
+        month.toString();
+        month = "0" + month;
+    }
+    let year = data.getFullYear();
+    console.log(data);
     let dados = {
         senha: pswd,
         todolist: {
@@ -14,7 +23,7 @@ export function cadastrar(user, pswd) {
                 {
                     id: 0,
                     nome: "Exemplo de tarefa",
-                    data: "25/06/2023",
+                    data: `${year}-${month}-${day}`,
                     completo: false,
                 }
             ],

@@ -11,17 +11,16 @@ export function add(user, dados, env) {
     // isso pro mesmo css funcionar pra todas as tasks que vao ter ids diferentes
     // o mesmo funciona pra cada elemento da task, mas deixei as ids tbm (acho q pode apagar)
     div.setAttribute('class', 'task ' + id);
-    let taskInfo = `<input class="checkbox ${id}" id="checkbox" type="checkbox"/>
-                    <input class="task_name ${id}" id="task_name"/>
-                    <input class="date ${id}" id="date" type="date">
-                    <button class="remove ${id}" "id="remove">r</button>
-                    <button class="edit ${id}" id="edit">e</button>`;
+    let taskInfo = `<input class="checkbox-${id}" id="checkbox" type="checkbox"/>
+                    <input class="task_name-${id}" id="task_name"/>
+                    <input class="date-${id}" id="date" type="date">
+                    <button class="remove-${id}" id="remove">r</button>`;
     div.innerHTML = taskInfo;
 
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
     // colocando a div depois do elemento
-    divBotao.parentNode.insertBefore(div, divBotao.nextSibling);
+    divBotao.parentNode.insertBefore(div, divBotao);
     // adicionar task depois do divBotao
 
     // so pra verificar se ta certo
