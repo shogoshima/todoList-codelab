@@ -6,7 +6,8 @@ export function display(lista) {
         // faço a mesma coisa que fiz na função de adicionar task
         // nisso eu só criei o html base
         let div = document.createElement('div');
-        div.setAttribute('class', 'task ' + id);
+        div.setAttribute('id', 'task');
+        div.setAttribute('class', 'task-' + id);
         let taskInfo = `<input class="checkbox-${id}" id="checkbox" type="checkbox"/>
                         <input class="task_name-${id}" id="task_name"/>
                         <input class="date-${id}" id="date" type="date">
@@ -17,6 +18,11 @@ export function display(lista) {
 
         // aqui eu atualizo os valores de acordo com o que tem na lista salva do localStorage
         document.querySelector(`.checkbox-${id}`).checked = lista[id].completo;
+        if (lista[id].completo) {
+            document.querySelector(`.task_name-${id}`).style = `text-decoration: line-through;
+            color: rgba(0, 0, 0, 0.5);
+            `;
+        }
         document.querySelector(`.task_name-${id}`).value = lista[id].nome;
         document.querySelector(`.date-${id}`).value = lista[id].data;
         console.log(lista[id].data);

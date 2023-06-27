@@ -10,7 +10,8 @@ export function add(user, dados, env) {
     // precisa ser um class, em vez de id.
     // isso pro mesmo css funcionar pra todas as tasks que vao ter ids diferentes
     // o mesmo funciona pra cada elemento da task, mas deixei as ids tbm (acho q pode apagar)
-    div.setAttribute('class', 'task ' + id);
+    div.setAttribute('id', 'task');
+    div.setAttribute('class', 'task-' + id);
     let taskInfo = `<input class="checkbox-${id}" id="checkbox" type="checkbox"/>
                     <input class="task_name-${id}" id="task_name"/>
                     <input class="date-${id}" id="date" type="date">
