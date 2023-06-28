@@ -24,8 +24,8 @@ console.log("todolist:", dados.todolist);
 // toda vez que faço refresh na página vai rodar essa função
 // Pra mostrar as listas que estavam salvas no localStorage
 // e pra mostrar os espaços que o usuário adicionou
-display(dados.todolist[env]);
 displayEnv(dados.todolist);
+display(dados.todolist[env]);
 
 // adiciona uma tarefa
 document.querySelector("#new_task").addEventListener("click", () => {
@@ -39,7 +39,7 @@ document.querySelector("#new_env").addEventListener("click", (event) => {
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(dados, event, display, env);
+    changeEnv(event);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {
