@@ -13,4 +13,5 @@ export function displayEnv(todolist) {
         // nesse caso, eu coloco antes do elemento do botão
         botao.parentNode.insertBefore(div, botao);
     }
+    document.querySelector(".envs").style = "display:flex";
 }

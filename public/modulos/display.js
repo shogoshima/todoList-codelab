@@ -27,4 +27,5 @@ export function display(lista) {
         document.querySelector(`.date-${id}`).value = lista[id].data;
         console.log(lista[id].data);
     }
+    document.querySelector("#list").style = "display:block";
 }
