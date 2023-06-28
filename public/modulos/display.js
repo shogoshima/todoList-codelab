@@ -6,10 +6,10 @@ export function display(lista) {
         // faço a mesma coisa que fiz na função de adicionar task
         // nisso eu só criei o html base
         let div = document.createElement('div');
-        div.setAttribute('id', 'task');
-        div.setAttribute('class', 'task-' + id);
+        div.setAttribute('id', 'task-' + id);
+        div.setAttribute('class', 'task');
         let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox"/>
-                        <input class="task_name" id="task_name-${id}"/>
+                        <input class="task_name" id="task_name-${id}" onClick="this.select();"/>
                         <input class="date" id="date-${id}" type="date">
                         <button class="remove" id="remove-${id}">r</button>`;
         div.innerHTML = taskInfo;

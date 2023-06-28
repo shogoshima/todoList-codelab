@@ -3,7 +3,7 @@
 // criar um novo key no objeto do todolist com o nome do env e colocar uma lista vazia
 // dar display da lista vazia
 
-export function newEnv(user, dados, display) {
+export function newEnv(user, dados) {
     let name;
     // cria um elemento de input para o usuário poder digitar um nome para o novo espaço
     let input = document.createElement('input');
@@ -20,6 +20,7 @@ export function newEnv(user, dados, display) {
     let inputName = document.querySelector("#env_name");
     inputName.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
+            event.preventDefault();
             // name é o input que o usuário deu ao novo espaço
             name = inputName.value;
             // dá atributos importantes para o CSS do arquivo já pegar nele
@@ -56,8 +57,7 @@ export function newEnv(user, dados, display) {
 
             // escreve no localStorage em qual página o usuário está agr
             localStorage.setItem('env', name);
-            input.setAttribute('autofocus', 'false');
-            window.location.href = "todolist.html"; 
+            window.location.href = "todolist.html";   
         }
     })
 }

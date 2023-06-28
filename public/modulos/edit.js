@@ -3,8 +3,16 @@ export function edit(event, user, dados, env) {
     let id = event.target.id;
     let lista = dados.todolist[env];
     let index = id.split('-')[1]; // pegar o número da task na lista
+    let task = document.querySelector(`#task-${index}`);
     if (classe === "task_name") {
-        lista[index].nome = document.querySelector(`#task_name-${index}`).value;
+        task.style = "background-color: rgb(156, 166, 163);"
+        task.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                task.style = "background-color: rgb(222, 222, 222)";
+                document.querySelector(`#task_name-${index}`).blur();
+            }
+            lista[index].nome = document.querySelector(`#task_name-${index}`).value;
+        })
     } else if (classe === "checkbox") {
         lista[index].completo = document.querySelector(`#checkbox-${index}`).checked;
         if (lista[index].completo) {
@@ -32,7 +40,7 @@ export function remove(event, user, dados, env) {
     let lista = dados.todolist[env];
     let index = id.split('-')[1]; // pegar o número da task na lista
     lista.splice(index, 1);
-    const elements = document.querySelectorAll(`.task-${index}`);
+    const elements = document.querySelectorAll(`#task-${index}`);
     for (const el of elements) {
         el.parentNode.removeChild(el);
     }

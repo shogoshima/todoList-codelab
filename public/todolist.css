@@ -55,7 +55,7 @@ body {
     cursor: pointer;
 }
 
-#task {
+.task {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,11 +83,9 @@ body {
     }
 }
 
-#task:hover {
+.task:hover {
     background-color: rgb(156, 166, 163);
-
     transition: background-color 0.5s ease-out;
-
 }
 
 .task_name {
@@ -99,7 +97,7 @@ body {
 .task_name:hover {
     /*background-color: brown;
     transition: background-color 1s ease-out;*/
-    cursor: pointer;
+    cursor: text;
 }
 
 .checkbox {
