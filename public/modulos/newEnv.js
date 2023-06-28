@@ -17,9 +17,12 @@ export function newEnv(user, dados, display) {
     botao.style = "display: none";
     // pega o input do usuário com o novo elemento criado. Quando o usuário clicar "enter", a função abaixo roda
     let inputName = document.querySelector("#envName");
+    inputName.style = `font-size: large;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;`;
     inputName.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            event.preventDefault();
             // name é o input que o usuário deu ao novo espaço
             name = inputName.value;
             // dá atributos importantes para o CSS do arquivo já pegar nele
@@ -29,7 +32,7 @@ export function newEnv(user, dados, display) {
             // cria uma nova chave no todolist com o nome do espaço
             let todolist = dados.todolist;
 
-            // pegar data atual
+            // pegar data atual, pra deixar meio q como default quando cria o objeto
             let data = new Date();
             let day = data.getDate();
             let month = data.getMonth() + 1;
@@ -38,7 +41,7 @@ export function newEnv(user, dados, display) {
                 month = "0" + month;
             }
             let year = data.getFullYear();
-
+            // pra criar o objeto
             todolist[name] = [
                 {
                     id: 0,
@@ -47,8 +50,6 @@ export function newEnv(user, dados, display) {
                     completo: false,
                 }
             ];
-            console.log(dados.todolist[name]);
-            display(dados.todolist[name]);
 
             // manda para o localStorage e mostra o botão de novo
             dados = JSON.stringify(dados);

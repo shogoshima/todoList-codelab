@@ -19,7 +19,6 @@ console.log("env: ", localStorage.getItem('env'));
 
 // Pra mostrar q assim conseguimos pegar dados do usuario no localStorage
 let dados = JSON.parse(localStorage.getItem(user));
-document.querySelector("#bemvindo").innerHTML = `Oi ${user}! sua senha é "${dados.senha}"`;
 console.log("dados:", dados);
 
 // toda vez que faço refresh na página vai rodar essa função
@@ -34,7 +33,7 @@ document.querySelector("#new_task").addEventListener("click", () => {
 })
 
 // adiciona uma categoria
-document.querySelector("#new_env").addEventListener("click", () => {
+document.querySelector("#new_env").addEventListener("click", (event) => {
     newEnv(user, dados, display);
 })
 
