@@ -10,6 +10,7 @@ export function newEnv(user, dados, display) {
     // cria atributos importantes para trabalhar com ele
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'envName');
+    input.setAttribute('autofocus', 'true');
     // pega o botao de adicionar um novo espaço
     let botao = document.querySelector("#new_env");
     // adiciona o input antes do botao, e apaga o botao temporariamente
@@ -58,6 +59,7 @@ export function newEnv(user, dados, display) {
 
             // escreve no localStorage em qual página o usuário está agr
             localStorage.setItem('env', name);
+            input.setAttribute('autofocus', 'false');
             window.location.href = "todolist.html"; 
         }
     })

@@ -12,10 +12,10 @@ export function add(user, dados, env) {
     // o mesmo funciona pra cada elemento da task, mas deixei as ids tbm (acho q pode apagar)
     div.setAttribute('id', 'task');
     div.setAttribute('class', 'task-' + id);
-    let taskInfo = `<input class="checkbox-${id}" id="checkbox" type="checkbox"/>
-                    <input class="task_name-${id}" id="task_name"/>
-                    <input class="date-${id}" id="date" type="date">
-                    <button class="remove-${id}" id="remove">r</button>`;
+    let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
+                    <input class="task_name" id="task_name-${id}">
+                    <input class="date" id="date-${id}" type="date">
+                    <button class="remove" id="remove-${id}">r</button>`;
     div.innerHTML = taskInfo;
 
     // pegar div do botao
@@ -44,7 +44,7 @@ export function add(user, dados, env) {
         completo: false,
     }
     lista.push(task);
-    document.querySelector(`.date-${id}`).value = `${year}-${month}-${day}`;
+    document.querySelector(`#date-${id}`).value = `${year}-${month}-${day}`;
 
     // preciso atualizar a lista no localStorage
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos

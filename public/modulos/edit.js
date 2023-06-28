@@ -2,20 +2,20 @@ export function edit(event, user, dados, env) {
     let classe = event.target.className;
     let id = event.target.id;
     let lista = dados.todolist[env];
-    let index = classe.split('-')[1]; // pegar o número da task na lista
-    if (id === "task_name") {
-        lista[index].nome = document.querySelector(`.task_name-${index}`).value;
-    } else if (id === "checkbox") {
-        lista[index].completo = document.querySelector(`.checkbox-${index}`).checked;
+    let index = id.split('-')[1]; // pegar o número da task na lista
+    if (classe === "task_name") {
+        lista[index].nome = document.querySelector(`#task_name-${index}`).value;
+    } else if (classe === "checkbox") {
+        lista[index].completo = document.querySelector(`#checkbox-${index}`).checked;
         if (lista[index].completo) {
-            document.querySelector(`.task_name-${index}`).style = `text-decoration: line-through;
+            document.querySelector(`#task_name-${index}`).style = `text-decoration: line-through;
             color: rgba(0, 0, 0, 0.5);
             `;
         } else {
-            document.querySelector(`.task_name-${index}`).style = "text-decoration: none";
+            document.querySelector(`#task_name-${index}`).style = "text-decoration: none";
         }
-    } else if (id === "date") {
-        lista[index].data = document.querySelector(`.date-${index}`).value;
+    } else if (classe === "date") {
+        lista[index].data = document.querySelector(`#date-${index}`).value;
     } else {
         return 0;
     }
@@ -25,12 +25,12 @@ export function edit(event, user, dados, env) {
 }
 
 export function remove(event, user, dados, env) {
-    let id = event.target.id;
-    if (id != "remove")
-        return 0;
     let classe = event.target.className;
+    if (classe != "remove")
+        return 0;
+    let id = event.target.id;
     let lista = dados.todolist[env];
-    let index = classe.split('-')[1]; // pegar o número da task na lista
+    let index = id.split('-')[1]; // pegar o número da task na lista
     lista.splice(index, 1);
     const elements = document.querySelectorAll(`.task-${index}`);
     for (const el of elements) {

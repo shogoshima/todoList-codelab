@@ -19,7 +19,7 @@ console.log("env: ", localStorage.getItem('env'));
 
 // Pra mostrar q assim conseguimos pegar dados do usuario no localStorage
 let dados = JSON.parse(localStorage.getItem(user));
-console.log("dados:", dados);
+console.log("todolist:", dados.todolist);
 
 // toda vez que faço refresh na página vai rodar essa função
 // Pra mostrar as listas que estavam salvas no localStorage
@@ -39,7 +39,7 @@ document.querySelector("#new_env").addEventListener("click", (event) => {
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(event);
+    changeEnv(dados, event, display, env);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {

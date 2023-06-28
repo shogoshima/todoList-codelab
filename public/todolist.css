@@ -71,23 +71,23 @@ body {
 
 }
 
-#task_name {
+.task_name {
     margin-right: auto;
     border: 0px;
     width: 85%;
 }
 
-#task_name:hover {
+.task_name:hover {
     /*background-color: brown;
     transition: background-color 1s ease-out;*/
     cursor: pointer;
 }
 
-#checkbox {
+.checkbox {
     margin-left: 10px;
 }
 
-#remove {
+.remove {
     margin-right: 10px;
 }
 
