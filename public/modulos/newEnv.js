@@ -25,7 +25,8 @@ export function newEnv(user, dados, display) {
             // dá atributos importantes para o CSS do arquivo já pegar nele
             input.setAttribute('type', 'button');
             input.setAttribute('value', name);
-            input.setAttribute('class', `env_button ${name}`);
+            input.setAttribute('class', `env_button`);
+            input.setAttribute('id', `env_button-${name}`);
             // cria uma nova chave no todolist com o nome do espaço
             let todolist = dados.todolist;
 
