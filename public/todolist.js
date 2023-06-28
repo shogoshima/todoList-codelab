@@ -33,20 +33,22 @@ document.querySelector("#new_task").addEventListener("click", () => {
 })
 
 // adiciona uma categoria
-document.querySelector("#new_env").addEventListener("click", (event) => {
+document.querySelector("#new_env").addEventListener("click", () => {
     newEnv(user, dados);
 })
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(event);
+    changeEnv(event, dados, display);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {
+    let env = localStorage.getItem('env');
     edit(event, user, dados, env);
 })
 
 document.querySelector("#list").addEventListener("click", (event) => {
+    let env = localStorage.getItem('env');
     remove(event, user, dados, env);
 })
 

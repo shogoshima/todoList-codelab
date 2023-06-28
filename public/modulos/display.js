@@ -1,5 +1,12 @@
 export function display(lista) {
-    document.querySelector("#list").innerHTML = "<button id='new_task'>Adicionar</button>";
+    // se não existir um botao na div de lista, cria um novo
+    let botao = document.createElement('div');
+    botao.setAttribute('type', 'button');
+    botao.setAttribute('id', 'new_task');
+    //document.querySelector("#list").innerHTML = `<button id="new_task">Adicionar</button>`;
+    document.querySelector("#list").replaceChildren(botao);
+    document.querySelector("#new_task").innerHTML = "Adicionar";
+    
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
     for (let id = 0; id < lista.length; id++) {
@@ -9,7 +16,7 @@ export function display(lista) {
         div.setAttribute('id', 'task-' + id);
         div.setAttribute('class', 'task');
         let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox"/>
-                        <input class="task_name" id="task_name-${id}" onClick="this.select();"/>
+                        <input class="task_name" id="task_name-${id}" onClick="this.select()"/>
                         <input class="date" id="date-${id}" type="date">
                         <button class="remove" id="remove-${id}">r</button>`;
         div.innerHTML = taskInfo;

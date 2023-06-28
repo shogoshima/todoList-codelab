@@ -51,8 +51,12 @@ body {
 
 /* botao */
 #new_task {
+    font-size: medium;
     margin-right: 85%;
     cursor: pointer;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 .task {

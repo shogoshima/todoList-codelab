@@ -5,13 +5,13 @@ export function edit(event, user, dados, env) {
     let index = id.split('-')[1]; // pegar o número da task na lista
     let task = document.querySelector(`#task-${index}`);
     if (classe === "task_name") {
-        task.style = "background-color: rgb(156, 166, 163);"
+        task.style = "background-color: rgb(156, 166, 163);";
+        lista[index].nome = document.querySelector(`#task_name-${index}`).value;
         task.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
                 task.style = "background-color: rgb(222, 222, 222)";
                 document.querySelector(`#task_name-${index}`).blur();
             }
-            lista[index].nome = document.querySelector(`#task_name-${index}`).value;
         })
     } else if (classe === "checkbox") {
         lista[index].completo = document.querySelector(`#checkbox-${index}`).checked;
