@@ -1,9 +1,21 @@
 export function edit(event, user, dados, env) {
+    // pego os dados do elemento que ativou o evento (nesse caso, o "oninput")
+    // preciso da classe e da id
     let classe = event.target.className;
+    
+    // id no formato: "task_name-4"
     let id = event.target.id;
+    
+    // preciso da lista
     let lista = dados.todolist[env];
-    let index = id.split('-')[1]; // pegar o número da task na lista
+
+    // vou fazer split da id - vai resultar numa lista, por ex: ["task_name", "4"]
+    // só quero o segundo item da lista, que é o index que preciso pra identificar
+    let index = id.split('-')[1]; 
     let task = document.querySelector(`#task-${index}`);
+
+    // nas próximas condicionais, eu confiro se o que está sendo mudado é
+    // o nome da task, ou o checkbox, ou a data
     if (classe === "task_name") {
         task.style = "background-color: rgb(156, 166, 163);";
         lista[index].nome = document.querySelector(`#task_name-${index}`).value;
@@ -27,6 +39,8 @@ export function edit(event, user, dados, env) {
     } else {
         return 0;
     }
+
+    // passo os dados atualizados pro banco de dados
     console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);

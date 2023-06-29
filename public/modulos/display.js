@@ -1,7 +1,5 @@
-export function display(lista) {
-    // se não existir um botao na div de lista, cria um novo
-    let botao = document.createElement('div');
-    botao.setAttribute('type', 'button');
+export function display(lista, user, add) {
+    let botao = document.createElement('button');
     botao.setAttribute('id', 'new_task');
     //document.querySelector("#list").innerHTML = `<button id="new_task">Adicionar</button>`;
     document.querySelector("#list").replaceChildren(botao);
@@ -33,5 +31,9 @@ export function display(lista) {
         document.querySelector(`#task_name-${id}`).value = lista[id].nome;
         document.querySelector(`#date-${id}`).value = lista[id].data;
     }
-    document.querySelector("#list").style = "display:flex";
+    document.querySelector("#new_task").addEventListener("click", () => {
+        let dados = JSON.parse(localStorage.getItem(user));
+        let env = localStorage.getItem('env');
+        add(user, dados, env);
+    })
 }

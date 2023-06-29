@@ -1,4 +1,5 @@
-export function changeEnv(event, dados, display) {
+export function changeEnv(event, display, add, user) {
+    let dados = JSON.parse(localStorage.getItem(user));
     // o event é o evento que o addEventListener pegou.
     // nesse caso seria o click do elemento com id= "new_env"
     // quero pegar o nome em que o usuário clicou. Pra isso pego o value do botão
@@ -12,6 +13,6 @@ export function changeEnv(event, dados, display) {
     // seta o novo env para o que o usuário clicou, e recarrega a página.
     // queria fazer isso de forma melhor
     localStorage.setItem('env', name);
-    display(dados.todolist[name]);
+    display(dados.todolist[name], user, add);
     document.querySelector("#pag_atual").innerHTML = `Você está em: ${name}`;
 }

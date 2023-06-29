@@ -25,77 +25,34 @@ console.log("dados:", dados);
 // Pra mostrar as listas que estavam salvas no localStorage
 // e pra mostrar os espaços que o usuário adicionou
 displayEnv(dados.todolist);
-display(dados.todolist[env]);
+display(dados.todolist[env], user, add);
 
-// adiciona uma tarefa
-document.querySelector("#new_task").addEventListener("click", () => {
-    add(user, dados, env);
-})
 
 // adiciona uma categoria
 document.querySelector("#new_env").addEventListener("click", () => {
+    let dados = JSON.parse(localStorage.getItem(user));
     newEnv(user, dados);
 })
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(event, dados, display);
+    changeEnv(event, display, add, user);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {
+    let dados = JSON.parse(localStorage.getItem(user));
     let env = localStorage.getItem('env');
     edit(event, user, dados, env);
 })
 
 document.querySelector("#list").addEventListener("click", (event) => {
+    let dados = JSON.parse(localStorage.getItem(user));
     let env = localStorage.getItem('env');
     remove(event, user, dados, env);
 })
 
-// so um exemplo de como acho q seria o objeto com o qual vamos trabalhar
-// a gente teria acesso a ele escrevendo "dados.todolist".
-// conseguimos mudar os dados toda vez q o usuario editar, ou criar um novo objeto na lista de tarefas
-
-// let todolist = {
-//     tarefas: [
-//         {
-//             id: 0,
-//             nome: "cozinhar",
-//             data: "20/07/2023",
-//             completo: false,
-//         },
-//         {
-//             id: 1,
-//             nome: "fazer tarefa",
-//             data: "20/07/2023",
-//             completo: false,
-//         },
-//         {
-//             id: 2,
-//             nome: "dormir",
-//             data: "20/07/2023",
-//             completo: false,
-//         }
-//     ],
-//     trabalho: [
-//         {
-//             id: 0,
-//             nome: "cozinhar",
-//             data: "20/07/2023",
-//             completo: false,
-//         },
-//         {
-//             id: 1,
-//             nome: "fazer tarefa",
-//             data: "20/07/2023",
-//             completo: false,
-//         },
-//         {
-//             id: 2,
-//             nome: "dormir",
-//             data: "20/07/2023",
-//             completo: false,
-//         }
-//     ],
-// }
-// console.log(todolist.trabalho[1].nome)
+// adiciona uma tarefa
+// document.querySelector("#new_task").addEventListener("click", () => {
+//     let env = localStorage.getItem('env');
+//     add(user, dados, env);
+// })
