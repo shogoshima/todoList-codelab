@@ -1,4 +1,4 @@
-export function displayEnv(todolist) {
+export function displayEnv(todolist, activeEnv) {
     let botao = document.querySelector("#new_env");
     // loop pelos objetos do todolist
     
@@ -14,5 +14,6 @@ export function displayEnv(todolist) {
         // nesse caso, eu coloco antes do elemento do botão
         botao.parentNode.insertBefore(div, botao);
     }
+    document.querySelector(`#env_button-${activeEnv}`).style = "background-color: rgb(158, 223, 208)";
     document.querySelector(".envs").style = "display:flex";
 }

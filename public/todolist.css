@@ -3,6 +3,7 @@ body {
     background-color: rgb(222, 222, 222);
 }
 
+/* barra de navegação */
 #sidenav {
     height: 100%;
     width: 10%;
@@ -15,6 +16,7 @@ body {
     padding: 20px;
 }
 
+/* texto escrito todolist */
 #todolist {
     padding: 5px 5px 5px 5px;
     font-size: 30px;
@@ -24,6 +26,7 @@ body {
     text-align: center;
 }
 
+/* lado das tasks */
 #main {
     margin-left: 10%;
     font-size: 30px;
@@ -36,6 +39,8 @@ body {
     to { opacity: 1; }
 }
 
+/* div que engloba toda as tasks. 
+É o retângulo englobando as tasks */
 #list {
     display: flex;
     flex-direction: column;
@@ -49,33 +54,32 @@ body {
     padding: 3%;
 }
 
-/* botao */
+/* botao para adicionar tasks */
 #new_task {
     font-size: medium;
-    margin-right: 85%;
+    margin-right: 80%;
     cursor: pointer;
     background-color: gray;
     padding: 5px;
     border-radius: 3px;
 }
 
+/* task com tudo */
 .task {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    font-size: medium;
-    border-style: solid;
-    block-size: 40px;
+    border-style: outset;
     border-width: 1px;
     border-radius: 10px;
     width: 90%;
+    height: 40px;
     background-color: rgb(222, 222, 222);
-    border-color: rgb(222, 222, 222);
     transition: background-color 0.5s ease-out;
     animation: adiciona 0.5s ease-out;
 }
-
+/* animação que faz com que a task surja de cima */
 @keyframes adiciona {
     from { 
         opacity: 0; top: -100px;
@@ -92,26 +96,35 @@ body {
     transition: background-color 0.5s ease-out;
 }
 
+/* local de input do nome da task */
 .task_name {
+    font-size: large;
     margin-right: auto;
     border: 0px;
-    width: 85%;
+    width: 80%;
 }
-
 .task_name:hover {
     /*background-color: brown;
     transition: background-color 1s ease-out;*/
     cursor: text;
 }
 
+/* data */
+.date {
+    font-size: large;
+}
+
+/* checkbox */
 .checkbox {
     margin-left: 10px;
 }
 
+/* botão de remover */
 .remove {
     margin-right: 10px;
 }
 
+/* classe pai que engloba os botões da categoria */
 .envs {
     margin-top: 20px;
     margin-right: 10%;
@@ -124,6 +137,7 @@ body {
 
 }
 
+/* cada botão da categoria */
 .env_button {
     background-color: rgba(94,200,174,255);
     cursor: pointer;
@@ -133,21 +147,19 @@ body {
     height: 80%;
     transition: background-color 0.5s ease-out;
 }
-
 .env_button:hover {
     background-color: rgb(158, 223, 208);
     transition: background-color 0.5s ease-out;
 }
 
+/* botão de quando se vai criar uma nova categoria */
 #new_env {
-    color: black;
     background-color: rgb(222, 222, 222);
     border: 1px;
     border-radius: 6%;
     font-size: larger;
     cursor: pointer;
 }
-
 #new_env:hover {
     background-color: white;
     transition: background-color 1s ease-out;
@@ -165,4 +177,13 @@ body {
 @keyframes expande {
     from { width: 0%; }
     to { width: 95%; }
+}
+
+/* barra de progresso */
+.progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }

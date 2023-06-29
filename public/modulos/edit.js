@@ -14,6 +14,13 @@ export function edit(event, user, dados, env) {
     let index = id.split('-')[1]; 
     let task = document.querySelector(`#task-${index}`);
 
+    let envNum = 0;
+    for (const envName in dados.todolist) {
+        if (envName === env)
+            break;
+        envNum++;
+    }
+
     // nas próximas condicionais, eu confiro se o que está sendo mudado é
     // o nome da task, ou o checkbox, ou a data
     if (classe === "task_name") {
@@ -29,10 +36,13 @@ export function edit(event, user, dados, env) {
         lista[index].completo = document.querySelector(`#checkbox-${index}`).checked;
         if (lista[index].completo) {
             document.querySelector(`#task_name-${index}`).style = `text-decoration: line-through;
-            color: rgba(0, 0, 0, 0.5);
-            `;
+            color: rgba(0, 0, 0, 0.5);`;
+            dados.progresso[envNum]++;
+            document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
         } else {
+            dados['progresso'][envNum]--;
             document.querySelector(`#task_name-${index}`).style = "text-decoration: none";
+            document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
         }
     } else if (classe === "date") {
         lista[index].data = document.querySelector(`#date-${index}`).value;

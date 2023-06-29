@@ -49,6 +49,7 @@ export function newEnv(user, dados) {
                     completo: false,
                 }
             ];
+            dados.progresso.push(0);
 
             // manda para o localStorage e mostra o botão de novo
             dados = JSON.stringify(dados);

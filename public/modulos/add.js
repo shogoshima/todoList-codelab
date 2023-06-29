@@ -46,6 +46,14 @@ export function add(user, dados, env) {
     lista.push(task);
     document.querySelector(`#date-${id}`).value = `${year}-${month}-${day}`;
 
+    let envNum = 0;
+    for (const envName in dados.todolist) {
+        if (envName === env)
+            break;
+        envNum++;
+    }
+    document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
+
     // preciso atualizar a lista no localStorage
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos
     // e quando atualizo a página não vou conseguir ver as tasks que tinha criado nessa função

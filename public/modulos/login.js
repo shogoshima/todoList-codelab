@@ -15,7 +15,7 @@ export function cadastrar(user, pswd) {
         month = "0" + month;
     }
     let year = data.getFullYear();
-    console.log(data);
+    let arr = new Array(1).fill(0);
     let dados = {
         senha: pswd,
         todolist: {
@@ -28,6 +28,7 @@ export function cadastrar(user, pswd) {
                 }
             ],
         },
+        progresso: arr,
     }
     if (user == "" || dados.senha == "") {
         alert("Parece que você esqueceu de digitar algo kkk");

@@ -14,7 +14,7 @@ let user = document.cookie
 
 // pega o nome do espaço em que o usuário está
 let env = localStorage.getItem('env');
-document.querySelector("#pag_atual").innerHTML = `Você está em: ${env}`;
+// document.querySelector("#pag_atual").innerHTML = `Você está em: ${env}`;
 console.log("env: ", localStorage.getItem('env'));
 
 // Pra mostrar q assim conseguimos pegar dados do usuario no localStorage
@@ -24,7 +24,7 @@ console.log("dados:", dados);
 // toda vez que faço refresh na página vai rodar essa função
 // Pra mostrar as listas que estavam salvas no localStorage
 // e pra mostrar os espaços que o usuário adicionou
-displayEnv(dados.todolist);
+displayEnv(dados.todolist, env);
 display(dados.todolist[env], user, add);
 
 
