@@ -28,6 +28,6 @@ export function display(lista, user) {
     
     // adicionando eventlistener pro botao que criei no começo dessa função
     document.querySelector("#new_task").addEventListener("click", () => {
-        add(user, dados, env);
+        add(user);
     })
 }

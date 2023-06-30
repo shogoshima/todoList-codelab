@@ -29,6 +29,8 @@ export function cadastrar() {
                     nome: "Exemplo de tarefa",
                     data: `${year}-${month}-${day}`,
                     completo: false,
+                    cor: 'black',
+                    descricao: "",
                 }
             ],
         },

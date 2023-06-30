@@ -1,9 +1,15 @@
+import { getCookie } from "./cookie.js";
 
 // dados = dados do usuario logado
-export function add(user, dados, env) {
+export function add(user) {
+    let dados = JSON.parse(localStorage.getItem(user));
+    let env = getCookie('env');
     let lista = dados.todolist[env];
     // o id vai ser o tamanho da lista
-    let id = lista.length == undefined ? 0 : (lista[lista.length - 1].id + 1);
+    const ids = lista.map(object => {
+        return object.id;
+    })
+    let id = lista.length == undefined ? 0 : Math.max(...ids) + 1;
     // criando elemento div (task)
     let div= document.createElement('div');
     // dando um class para a div
@@ -44,6 +50,8 @@ export function add(user, dados, env) {
         nome: "",
         data: `${year}-${month}-${day}`,
         completo: false,
+        cor: 'black',
+        descricao: "",
     }
     lista.push(task);
     document.querySelector(`#date-${id}`).value = `${year}-${month}-${day}`;

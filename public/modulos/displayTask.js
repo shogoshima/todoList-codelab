@@ -1,3 +1,5 @@
+import { taskColor } from "./taskColor.js";
+
 export function displayTask(index, lista, divBotao) {
     // faço a mesma coisa que fiz na função de adicionar task
     // nisso eu só criei o html base
@@ -24,4 +26,5 @@ export function displayTask(index, lista, divBotao) {
     }
     document.querySelector(`#task_name-${taskId}`).value = lista[index].nome;
     document.querySelector(`#date-${taskId}`).value = lista[index].data;
+    document.querySelector(`#color-${taskId}`).style.backgroundColor = taskColor(lista[index].data);
 }

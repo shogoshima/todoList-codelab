@@ -1,4 +1,5 @@
 import { displayTask } from './displayTask.js';
+import { add } from './add.js';
 
 function swapElements(arr, i1, i2) {
     let temp = arr[i1];
@@ -35,6 +36,10 @@ export function sort(user, dados, env) {
             displayTask(index, lista, divBotao);
         }, index * 25);
     }
+
+    document.querySelector("#new_task").addEventListener("click", () => {
+        add(user);
+    })
 
     console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);

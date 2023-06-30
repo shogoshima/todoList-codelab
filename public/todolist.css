@@ -132,7 +132,7 @@ body {
 }
 
 .color {
-    height: 12px;
+    height: 15px;
     width: 15px;
     border-radius: 50%;
     background-color: black;
@@ -200,4 +200,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+/* animacao de quando a task é removida */
+@keyframes removeTask {
+    from { height: 40px; opacity: 1; }
+    to { height: 0px; opacity: 0; }
 }
