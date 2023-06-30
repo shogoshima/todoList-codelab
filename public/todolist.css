@@ -122,6 +122,20 @@ body {
 /* botão de remover */
 .remove {
     margin-right: 10px;
+    height: 20px;
+    border: 0px;
+    background-color: rgb(222, 222, 222);
+}
+.trash {
+    height: 15px;
+    margin-top: 1px;
+}
+
+.color {
+    height: 12px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
 }
 
 /* classe pai que engloba os botões da categoria */

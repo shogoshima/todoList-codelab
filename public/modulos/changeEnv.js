@@ -1,4 +1,8 @@
-export function changeEnv(event, user, display, add, cookie, getCookie) {
+import { display } from './display.js';
+import { add } from './add.js';
+import { cookie, getCookie } from './cookie.js';
+
+export function changeEnv(event, user) {
     let oldEnv = getCookie('env');
     let dados = JSON.parse(localStorage.getItem(user));
     document.querySelector(`#env_button-${oldEnv}`).style = "background-color: rgba(94,200,174,255)";

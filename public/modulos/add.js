@@ -15,7 +15,9 @@ export function add(user, dados, env) {
     let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
                     <input class="task_name" id="task_name-${id}" onClick="this.select();">
                     <input class="date" id="date-${id}" type="date">
-                    <button class="remove" id="remove-${id}">r</button>`;
+                    <div class="color" id="color-${id}"></div>
+                    <button class="remove" id="remove-${id}">
+                    <img class="trash" id="trash-${id}" src="./img/bin.png"></button>`;
     div.innerHTML = taskInfo;
 
     // pegar div do botao

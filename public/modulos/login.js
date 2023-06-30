@@ -1,6 +1,8 @@
 // se o seu localStorage estiver poluído:
 // localStorage.clear();
 
+import { cookie } from "./cookie.js";
+
 // funcao para cadastrar:
 // pega os dados do input (user e pswd) que seriam do document.getElementById.
 // cria um objeto chamado dados, em que teria a senha do usuario e um outro objeto,
@@ -48,7 +50,7 @@ export function cadastrar() {
 // se "dados" não for vazio, ele vê se a senha que tava salva é a mesma q ta no input.
 // se for a mesma, cria um cookie que expira depois de 15 minutos, e vai para o html do todolist
 // senao, ele só diz q ta errado
-export function login(cookie) {
+export function login() {
     let user = document.querySelector("#usuario").value;
     let pswd = document.querySelector("#senha").value;
     if (user == "" || pswd == "") {

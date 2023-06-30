@@ -1,9 +1,11 @@
+import { cookie } from "./cookie.js";
+
 // quando clico, devo:
 // solicitar um nome pro novo environment: Input -> aperta enter -> confirma o nome do env -> vira texto
 // criar um novo key no objeto do todolist com o nome do env e colocar uma lista vazia
 // dar display da lista vazia
 
-export function newEnv(user, dados, cookie) {
+export function newEnv(user, dados) {
     let name;
     // cria um elemento de input para o usuário poder digitar um nome para o novo espaço
     let input = document.createElement('input');

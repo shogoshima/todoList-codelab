@@ -68,7 +68,7 @@ export function edit(event, user, dados, env) {
 
 export function remove(event, user, dados, env) {
     let classe = event.target.className;
-    if (classe != "remove")
+    if (classe != "remove" && classe != "trash")
         return 0;
     let id = event.target.id;
     let lista = dados.todolist[env];

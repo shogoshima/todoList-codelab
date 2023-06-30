@@ -1,10 +1,9 @@
-import { add } from '/modulos/add.js';
 import { display } from '/modulos/display.js';
 import { newEnv } from '/modulos/newEnv.js';
 import { displayEnv } from './modulos/displayEnv.js';
 import { changeEnv } from './modulos/changeEnv.js';
 import { edit, remove } from './modulos/edit.js';
-import { cookie, getCookie } from './modulos/cookie.js';
+import { getCookie } from './modulos/cookie.js';
 import { sort } from './modulos/sort.js';
 
 // para pegar o cookie que foi criado na aba de login.
@@ -25,18 +24,17 @@ console.log("dados:", dados);
 // Pra mostrar as listas que estavam salvas no localStorage
 // e pra mostrar os espaços que o usuário adicionou
 displayEnv(dados.todolist, env);
-display(dados.todolist[env], user, add, getCookie);
-
+display(dados.todolist[env], user);
 
 // adiciona uma categoria
 document.querySelector("#new_env").addEventListener("click", () => {
     let dados = JSON.parse(localStorage.getItem(user));
-    newEnv(user, dados, cookie);
+    newEnv(user, dados);
 })
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(event, user, display, add, cookie, getCookie);
+    changeEnv(event, user);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {
@@ -54,5 +52,5 @@ document.querySelector("#list").addEventListener("click", (event) => {
 document.querySelector("#sort").addEventListener("click", () => {
     let dados = JSON.parse(localStorage.getItem(user));
     let env = getCookie('env');
-    sort(user, dados, env, getCookie)
+    sort(user, dados, env)
 })
