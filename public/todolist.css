@@ -6,7 +6,7 @@ body {
 /* barra de navegação */
 #sidenav {
     height: 100%;
-    width: 10%;
+    width: 160px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -28,7 +28,7 @@ body {
 
 /* lado das tasks */
 #main {
-    margin-left: 10%;
+    margin-left: 160px;
     font-size: 30px;
     padding: 0px 50px;
     animation: fadein 2s;

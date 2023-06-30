@@ -3,7 +3,7 @@
 // criar um novo key no objeto do todolist com o nome do env e colocar uma lista vazia
 // dar display da lista vazia
 
-export function newEnv(user, dados) {
+export function newEnv(user, dados, cookie) {
     let name;
     // cria um elemento de input para o usuário poder digitar um nome para o novo espaço
     let input = document.createElement('input');
@@ -57,7 +57,7 @@ export function newEnv(user, dados) {
             botao.style = "display: block";
 
             // escreve no localStorage em qual página o usuário está agr
-            localStorage.setItem('env', name);
+            cookie('env', name);
             window.location.href = "todolist.html";   
         }
     })

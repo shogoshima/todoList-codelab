@@ -3,10 +3,11 @@
 // e linka aqui, tipo: import { soma, sub, mult, div } from './modulo.js';
 
 import { login, cadastrar } from '/modulos/login.js';
+import { cookie, getCookie } from './modulos/cookie.js';
 
 document.querySelector("#cadastro").addEventListener("click", () => {
-    cadastrar(document.querySelector("#usuario").value, document.querySelector("#senha").value);
+    cadastrar();
 }); 
 document.querySelector("#login").addEventListener("click", () => {
-    login(document.querySelector("#usuario").value, document.querySelector("#senha").value);
+    login(cookie);
 });

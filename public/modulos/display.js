@@ -1,17 +1,7 @@
-export function display(lista, user, add) {
-    let botao = document.createElement('button');
-    botao.setAttribute('id', 'new_task');
-    //document.querySelector("#list").innerHTML = `<button id="new_task">Adicionar</button>`;
-    document.querySelector("#list").replaceChildren(botao);
-    document.querySelector("#new_task").innerHTML = "Adicionar";
+let ct;
 
-    // contagem do progresso
-    let ct = 0;
-
-    // pegar div do botao
-    let divBotao = document.querySelector("#new_task");
-    for (let index = 0; index < lista.length; index++) {
-        // faço a mesma coisa que fiz na função de adicionar task
+function displayTask(index, lista, divBotao) {
+    // faço a mesma coisa que fiz na função de adicionar task
         // nisso eu só criei o html base
         let taskId = lista[index].id;
         let div = document.createElement('div');
@@ -35,6 +25,22 @@ export function display(lista, user, add) {
         }
         document.querySelector(`#task_name-${taskId}`).value = lista[index].nome;
         document.querySelector(`#date-${taskId}`).value = lista[index].data;
+}
+
+export function display(lista, user, add, getCookie) {
+    // cria um botao 
+    let botao = document.createElement('button');
+    botao.setAttribute('id', 'new_task');
+    document.querySelector("#list").replaceChildren(botao);
+    document.querySelector("#new_task").innerHTML = "Adicionar";
+
+    // contagem do progresso
+    ct = 0;
+
+    // pegar div do botao
+    let divBotao = document.querySelector("#new_task");
+    for (let index = 0; index < lista.length; index++) {
+        displayTask(index, lista, divBotao);
     }
     // barra de progresso
     document.querySelector("#barra").value = ct / lista.length * 100;
@@ -42,7 +48,7 @@ export function display(lista, user, add) {
     // adicionando eventlistener pro botao que criei no começo dessa função
     document.querySelector("#new_task").addEventListener("click", () => {
         let dados = JSON.parse(localStorage.getItem(user));
-        let env = localStorage.getItem('env');
+        let env = getCookie('env');
         add(user, dados, env);
     })
 }
