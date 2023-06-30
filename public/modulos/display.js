@@ -10,30 +10,31 @@ export function display(lista, user, add) {
 
     // pegar div do botao
     let divBotao = document.querySelector("#new_task");
-    for (let id = 0; id < lista.length; id++) {
+    for (let index = 0; index < lista.length; index++) {
         // faço a mesma coisa que fiz na função de adicionar task
         // nisso eu só criei o html base
+        let taskId = lista[index].id;
         let div = document.createElement('div');
-        div.setAttribute('id', 'task-' + id);
+        div.setAttribute('id', 'task-' + taskId);
         div.setAttribute('class', 'task');
-        let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox"/>
-                        <input class="task_name" id="task_name-${id}" onClick="this.select()"/>
-                        <input class="date" id="date-${id}" type="date">
-                        <button class="remove" id="remove-${id}">r</button>`;
+        let taskInfo = `<input class="checkbox" id="checkbox-${taskId}" type="checkbox"/>
+                        <input class="task_name" id="task_name-${taskId}" onClick="this.select()"/>
+                        <input class="date" id="date-${taskId}" type="date">
+                        <button class="remove" id="remove-${taskId}">r</button>`;
         div.innerHTML = taskInfo;
         // colocando a div depois do elemento
         divBotao.parentNode.insertBefore(div, divBotao);
 
         // aqui eu atualizo os valores de acordo com o que tem na lista salva do localStorage
-        document.querySelector(`#checkbox-${id}`).checked = lista[id].completo;
-        if (lista[id].completo) {
+        document.querySelector(`#checkbox-${taskId}`).checked = lista[index].completo;
+        if (lista[index].completo) {
             ct++;
-            document.querySelector(`#task_name-${id}`).style = `text-decoration: line-through;
+            document.querySelector(`#task_name-${taskId}`).style = `text-decoration: line-through;
             color: rgba(0, 0, 0, 0.5);
             `;
         }
-        document.querySelector(`#task_name-${id}`).value = lista[id].nome;
-        document.querySelector(`#date-${id}`).value = lista[id].data;
+        document.querySelector(`#task_name-${taskId}`).value = lista[index].nome;
+        document.querySelector(`#date-${taskId}`).value = lista[index].data;
     }
     // barra de progresso
     document.querySelector("#barra").value = ct / lista.length * 100;

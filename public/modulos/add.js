@@ -3,7 +3,7 @@
 export function add(user, dados, env) {
     let lista = dados.todolist[env];
     // o id vai ser o tamanho da lista
-    let id = lista.length == undefined ? 0 : lista.length;
+    let id = lista.length == undefined ? 0 : (lista[lista.length - 1].id + 1);
     // criando elemento div (task)
     let div= document.createElement('div');
     // dando um class para a div
