@@ -9,7 +9,7 @@ export function add(user) {
     const ids = lista.map(object => {
         return object.id;
     })
-    let id = lista.length == undefined ? 0 : Math.max(...ids) + 1;
+    let id = (lista.length == null || lista.length == undefined || lista.length == 0) ? 0 : Math.max(...ids) + 1;
     // criando elemento div (task)
     let div= document.createElement('div');
     // dando um class para a div
@@ -20,6 +20,7 @@ export function add(user) {
     div.setAttribute('class', 'task');
     let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
                     <input class="task_name" id="task_name-${id}" onClick="this.select();">
+                    <button class="more" id="more-${id}">v</button>
                     <input class="date" id="date-${id}" type="date">
                     <div class="color" id="color-${id}"></div>
                     <button class="remove" id="remove-${id}">
@@ -50,7 +51,6 @@ export function add(user) {
         nome: "",
         data: `${year}-${month}-${day}`,
         completo: false,
-        cor: 'black',
         descricao: "",
     }
     lista.push(task);

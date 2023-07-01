@@ -13,7 +13,7 @@ export function edit(event, user, dados, env) {
     let lista = dados.todolist[env];
 
     // vou fazer split da id - vai resultar numa lista, por ex: ["task_name", "4"]
-    let taskId = id.split('-')[1]; 
+    let taskId = id.split('-')[1];
     let task = document.querySelector(`#task-${taskId}`);
 
     // encontra a 'index' da categoria no objeto do todolist
@@ -65,6 +65,8 @@ export function edit(event, user, dados, env) {
     } else if (classe === "date") {
         lista[index].data = document.querySelector(`#date-${taskId}`).value;
         document.querySelector(`#color-${taskId}`).style.backgroundColor = taskColor(lista[index].data);
+    } else if (classe === "descInput") {
+        lista[index].descricao = document.querySelector(`#descInput-${taskId}`).value;
     } else {
         return 0;
     }
@@ -86,7 +88,7 @@ export function remove(event, user, dados, env) {
     // encontra index da task na lista, de acordo com a id da task
     
     // animacao de remocao
-    document.querySelector(`#task-${taskId}`).style.animation = "removeTask 0.2s linear";
+    document.querySelector(`#task-${taskId}`).style.animation = "removeTask 0.25s ease-in";
     document.querySelector(`#task-${taskId}`).addEventListener("animationend", () => {
         const elements = document.querySelectorAll(`#task-${taskId}`);
         for (const el of elements) {
@@ -107,7 +109,7 @@ export function remove(event, user, dados, env) {
     if (seCompleto)
         dados.progresso[envNum]--;
     
-    document.querySelector("#barra").value = dados['progresso'][envNum] / (lista.length - 1) * 100;
+    document.querySelector("#barra").value = lista.length == 1 ? 0 :dados['progresso'][envNum] / (lista.length - 1) * 100;
     
     // apaga o objeto selecionado da lista e atualiza no banco de dados
     lista.splice(index, 1);

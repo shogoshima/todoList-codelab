@@ -49,6 +49,7 @@ export function newEnv(user, dados) {
                     nome: "Exemplo de tarefa",
                     data: `${year}-${month}-${day}`,
                     completo: false,
+                    descricao: "Descrição",
                 }
             ];
             dados.progresso.push(0);

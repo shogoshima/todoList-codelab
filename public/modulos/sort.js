@@ -34,7 +34,7 @@ export function sort(user, dados, env) {
     for (let index = 0; index < lista.length; index++) {
         setTimeout(() => {
             displayTask(index, lista, divBotao);
-        }, index * 25);
+        }, index * 75);
     }
 
     document.querySelector("#new_task").addEventListener("click", () => {

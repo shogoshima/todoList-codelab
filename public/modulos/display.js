@@ -24,7 +24,7 @@ export function display(lista, user) {
             break;
         envNum++;
     }
-    document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
+    document.querySelector("#barra").value = lista.length == 1 ? 0 :dados['progresso'][envNum] / (lista.length - 1) * 100;
     
     // adicionando eventlistener pro botao que criei no começo dessa função
     document.querySelector("#new_task").addEventListener("click", () => {

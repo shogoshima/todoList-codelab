@@ -5,6 +5,7 @@ import { changeEnv } from './modulos/changeEnv.js';
 import { edit, remove } from './modulos/edit.js';
 import { getCookie } from './modulos/cookie.js';
 import { sort } from './modulos/sort.js';
+import { description } from './modulos/description.js';
 
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
@@ -47,6 +48,7 @@ document.querySelector("#list").addEventListener("click", (event) => {
     let dados = JSON.parse(localStorage.getItem(user));
     let env = getCookie('env');
     remove(event, user, dados, env);
+    description(event, user, dados, env);
 })
 
 document.querySelector("#sort").addEventListener("click", () => {
