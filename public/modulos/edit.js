@@ -1,4 +1,5 @@
 import { taskColor } from "./taskColor.js";
+import { removeEnv } from "./removeEnv.js";
 
 // funcao que lida com qualquer tipo de edição da task (checkbox, mudança de nome, mudança de data)
 export function edit(event, user, dados, env) {
@@ -55,12 +56,16 @@ export function edit(event, user, dados, env) {
             color: rgba(0, 0, 0, 0.5);`;
             // atualiza na lista de progresso e mostra o progresso atualizado na barra
             dados.progresso[envNum]++;
-            document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
+            let progresso = dados['progresso'][envNum] / lista.length * 100;
+            document.querySelector("#barra").value = progresso;
+            removeEnv(user, env, progresso);
         } else {
             // atualiza na lista, tira o risco que tinha no texto e mostra o progresso atualizado na barra
             dados['progresso'][envNum]--;
             document.querySelector(`#task_name-${taskId}`).style = "text-decoration: none";
-            document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
+            let progresso = dados['progresso'][envNum] / lista.length * 100;
+            document.querySelector("#barra").value = progresso;
+            removeEnv(user, env, progresso);
         }
     } else if (classe === "date") {
         lista[index].data = document.querySelector(`#date-${taskId}`).value;
@@ -109,7 +114,9 @@ export function remove(event, user, dados, env) {
     if (seCompleto)
         dados.progresso[envNum]--;
     
-    document.querySelector("#barra").value = lista.length == 1 ? 0 :dados['progresso'][envNum] / (lista.length - 1) * 100;
+    let progresso = lista.length == 1 ? 0 : dados['progresso'][envNum] / (lista.length - 1) * 100;
+    document.querySelector("#barra").value = progresso;
+    removeEnv(user, env, progresso);
     
     // apaga o objeto selecionado da lista e atualiza no banco de dados
     lista.splice(index, 1);

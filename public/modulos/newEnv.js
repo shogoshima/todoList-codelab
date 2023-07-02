@@ -36,11 +36,9 @@ export function newEnv(user, dados) {
             // pegar data atual, pra deixar meio q como default quando cria o objeto
             let data = new Date();
             let day = data.getDate();
+            day = day.toLocaleString('en-US', { minimumIntegerDigits: 2 });
             let month = data.getMonth() + 1;
-            if ((month % 10) == month) {
-                month.toString();
-                month = "0" + month;
-            }
+            month = month.toLocaleString('en-US', { minimumIntegerDigits: 2 });
             let year = data.getFullYear();
             // pra criar o objeto
             todolist[name] = [

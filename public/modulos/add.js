@@ -1,4 +1,5 @@
 import { getCookie } from "./cookie.js";
+import { removeEnv } from "./removeEnv.js";
 
 // dados = dados do usuario logado
 export function add(user) {
@@ -39,11 +40,9 @@ export function add(user) {
     // pegar data atual
     let data = new Date();
     let day = data.getDate();
+    day = day.toLocaleString('en-US', { minimumIntegerDigits: 2 });
     let month = data.getMonth() + 1;
-    if ((month % 10) == month) {
-        month.toString();
-        month = "0" + month;
-    }
+    month = month.toLocaleString('en-US', { minimumIntegerDigits: 2 });
     let year = data.getFullYear();
     // adicionando nova task na lista:
     let task = {
@@ -62,7 +61,10 @@ export function add(user) {
             break;
         envNum++;
     }
-    document.querySelector("#barra").value = dados['progresso'][envNum] / lista.length * 100;
+
+    let progresso = dados['progresso'][envNum] / lista.length * 100;
+    document.querySelector("#barra").value = progresso;
+    removeEnv(user, env, progresso);
 
     // preciso atualizar a lista no localStorage
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos

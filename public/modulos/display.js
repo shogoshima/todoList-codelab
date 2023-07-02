@@ -1,6 +1,7 @@
 import { add } from "./add.js";
 import { getCookie } from "./cookie.js";
 import { displayTask } from "./displayTask.js";
+import { removeEnv } from "./removeEnv.js";
 
 export function display(lista, user) {
     let dados = JSON.parse(localStorage.getItem(user));
@@ -24,8 +25,10 @@ export function display(lista, user) {
             break;
         envNum++;
     }
-    document.querySelector("#barra").value = lista.length == 1 ? 0 :dados['progresso'][envNum] / (lista.length - 1) * 100;
-    
+    let progresso = lista.length == 0 ? 0 : dados['progresso'][envNum] / (lista.length) * 100;
+    document.querySelector("#barra").value = progresso;
+    removeEnv(user, env, progresso);
+
     // adicionando eventlistener pro botao que criei no começo dessa função
     document.querySelector("#new_task").addEventListener("click", () => {
         add(user);

@@ -13,11 +13,9 @@ export function cadastrar() {
     let pswd = document.querySelector("#senha").value;
     let data = new Date();
     let day = data.getDate();
+    day = day.toLocaleString('en-US', { minimumIntegerDigits: 2 });
     let month = data.getMonth() + 1;
-    if ((month % 10) == month) {
-        month.toString();
-        month = "0" + month;
-    }
+    month = month.toLocaleString('en-US', { minimumIntegerDigits: 2 });
     let year = data.getFullYear();
     let arr = new Array(1).fill(0);
     let dados = {

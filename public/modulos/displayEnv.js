@@ -1,6 +1,7 @@
 export function displayEnv(todolist, activeEnv) {
     let botao = document.querySelector("#new_env");
     // loop pelos objetos do todolist
+    document.querySelector(".envs").replaceChildren(botao);
     
     for (const name in todolist) {
         // cria um elemento (que por enquanto não tá no html)
