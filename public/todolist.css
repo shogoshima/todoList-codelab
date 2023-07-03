@@ -255,3 +255,21 @@ body {
     to { width: 0px; opacity: 0; }
     from { width: 100px; opacity: 1; }
 }
+
+@media screen 
+    and (max-device-width: 700px) {
+
+        #main {
+            margin-left: 0px;
+            padding: 3%;
+        }
+
+        #sidenav {
+            width: 0;
+            padding: 0;
+        }
+
+        #sidenav.expand {
+            width: 100%;
+        }
+    }
