@@ -36,6 +36,9 @@ export function edit(event) {
     // nas próximas condicionais, eu confiro se o que está sendo mudado é
     // o nome da task, ou o checkbox, ou a data
     if (classe === "task_name") {
+        // let imgRemove = document.querySelector(`#trash-${taskId}`);
+        // let botaoRemove = document.querySelector(`#remove-${taskId}`);
+        
         task.style = "background-color: rgb(156, 166, 163);";
         lista[index].nome = document.querySelector(`#task_name-${taskId}`).value;
 

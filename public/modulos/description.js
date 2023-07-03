@@ -30,7 +30,7 @@ export function description(event) {
 
     if (document.querySelector(`#description-${taskId}`) === null) {
         // muda a imagem do botao
-        document.querySelector(`#more-${taskId}`).innerHTML = `<img class="arrow" id="arrow-${taskId}" src="./img/up-arrow.png">`;
+        document.querySelector(`#arrow-${taskId}`).src = `./img/up-arrow.png`;
         
         // cria uma nova div de descrição, e coloca alguns atributos nele
         let desc = document.createElement('div');
@@ -60,7 +60,7 @@ export function description(event) {
     // caso seja clicado, ele deve ser retraído e apagar o elemento do html
     document.querySelector(`#more-${taskId}`).addEventListener("click", () => {
         if (document.querySelector(`#description-${taskId}`)) {
-            document.querySelector(`#more-${taskId}`).innerHTML = `<img class="arrow" id="arrow-${taskId}" src="./img/down-arrow.png">`;
+            document.querySelector(`#arrow-${taskId}`).src = `./img/down-arrow.png`;
             document.querySelector(`#description-${taskId}`).style.animation = "removeDesc 0.25s linear";
             document.querySelector(`#description-${taskId}`).addEventListener("animationend", () => {
                 // os elementos serão apagados somente quando a animação acabar
