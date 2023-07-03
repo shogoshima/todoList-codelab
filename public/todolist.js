@@ -51,3 +51,9 @@ document.querySelector("#list").addEventListener("click", (event) => {
 document.querySelector("#sort").addEventListener("click", () => {
     sort();
 })
+
+document.querySelector('#expand_btn').addEventListener("click", () => {
+    let sidenav = document.querySelector('#sidenav');
+    sidenav.classList.toggle('expand');
+    document.querySelector('#main').classList.toggle('expand');
+})
