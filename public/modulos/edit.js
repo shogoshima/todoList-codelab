@@ -1,8 +1,13 @@
 import { taskColor } from "./taskColor.js";
 import { removeEnv } from "./removeEnv.js";
+import { getCookie } from "./cookie.js";
 
 // funcao que lida com qualquer tipo de edição da task (checkbox, mudança de nome, mudança de data)
-export function edit(event, user, dados, env) {
+export function edit(event) {
+    let user = getCookie('logado');
+    let env = getCookie('env');
+    let dados = JSON.parse(localStorage.getItem(user));
+
     // pego os dados do elemento que ativou o evento (nesse caso, o "oninput")
     // preciso da classe e da id
     let classe = event.target.className;
@@ -83,7 +88,11 @@ export function edit(event, user, dados, env) {
 }
 
 // funcao para remover a task
-export function remove(event, user, dados, env) {
+export function remove(event) {
+    let user = getCookie('logado');
+    let env = getCookie('env');
+    let dados = JSON.parse(localStorage.getItem(user));
+
     let classe = event.target.className;
     if (classe != "remove" && classe != "trash")
         return 0;
@@ -94,11 +103,15 @@ export function remove(event, user, dados, env) {
     
     // animacao de remocao
     document.querySelector(`#task-${taskId}`).style.animation = "removeTask 0.25s ease-in";
+    if (document.querySelector(`#description-${taskId}`))
+        document.querySelector(`#description-${taskId}`).style.animation = "removeDesc 0.25s ease-in";
     document.querySelector(`#task-${taskId}`).addEventListener("animationend", () => {
         const elements = document.querySelectorAll(`#task-${taskId}`);
         for (const el of elements) {
             el.parentNode.removeChild(el);
         }
+        if (document.querySelector(`#description-${taskId}`))
+            document.querySelector(`#description-${taskId}`).remove();
     })
 
     let envNum = 0;

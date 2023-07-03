@@ -11,6 +11,8 @@ import { description } from './modulos/description.js';
 // Pra conseguir pegar o nome do usuário que logou na aba de login
 let user = getCookie('logado');
 console.log("user: ", user);
+if (!user)
+    window.location.href = "/index.html";
 
 // pega o nome do espaço em que o usuário está
 let env = getCookie('env');
@@ -24,35 +26,28 @@ console.log("dados:", dados);
 // toda vez que faço refresh na página vai rodar essa função
 // Pra mostrar as listas que estavam salvas no localStorage
 // e pra mostrar os espaços que o usuário adicionou
-displayEnv(dados.todolist, env);
-display(dados.todolist[env], user);
+displayEnv();
+display();
 
 // adiciona uma categoria
 document.querySelector("#new_env").addEventListener("click", () => {
-    let dados = JSON.parse(localStorage.getItem(user));
-    newEnv(user, dados);
+    newEnv();
 })
 
 // muda o env quando aperta
 document.querySelector(".envs").addEventListener("click", (event) => {
-    changeEnv(event, user);
+    changeEnv(event);
 })
 
 document.querySelector("#list").addEventListener("input", (event) => {
-    let dados = JSON.parse(localStorage.getItem(user));
-    let env = getCookie('env');
-    edit(event, user, dados, env);
+    edit(event);
 })
 
 document.querySelector("#list").addEventListener("click", (event) => {
-    let dados = JSON.parse(localStorage.getItem(user));
-    let env = getCookie('env');
-    remove(event, user, dados, env);
-    description(event, user, dados, env);
+    remove(event);
+    description(event);
 })
 
 document.querySelector("#sort").addEventListener("click", () => {
-    let dados = JSON.parse(localStorage.getItem(user));
-    let env = getCookie('env');
-    sort(user, dados, env)
+    sort();
 })

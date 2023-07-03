@@ -1,11 +1,14 @@
-import { cookie } from "./cookie.js";
+import { cookie, getCookie } from "./cookie.js";
 
 // quando clico, devo:
 // solicitar um nome pro novo environment: Input -> aperta enter -> confirma o nome do env -> vira texto
 // criar um novo key no objeto do todolist com o nome do env e colocar uma lista vazia
 // dar display da lista vazia
 
-export function newEnv(user, dados) {
+export function newEnv() {
+    let user = getCookie('logado');
+    let dados = JSON.parse(localStorage.getItem(user));
+
     let name;
     // cria um elemento de input para o usuário poder digitar um nome para o novo espaço
     let input = document.createElement('input');
@@ -25,11 +28,12 @@ export function newEnv(user, dados) {
             event.preventDefault();
             // name é o input que o usuário deu ao novo espaço
             name = inputName.value;
+            let nameId = name.replace(/ /g, "_");
             // dá atributos importantes para o CSS do arquivo já pegar nele
             input.setAttribute('type', 'button');
             input.setAttribute('value', name);
             input.setAttribute('class', `env_button`);
-            input.setAttribute('id', `env_button-${name}`);
+            input.setAttribute('id', `env_button-${nameId}`);
             // cria uma nova chave no todolist com o nome do espaço
             let todolist = dados.todolist;
 
@@ -41,13 +45,13 @@ export function newEnv(user, dados) {
             month = month.toLocaleString('en-US', { minimumIntegerDigits: 2 });
             let year = data.getFullYear();
             // pra criar o objeto
-            todolist[name] = [
+            todolist[nameId] = [
                 {
                     id: 0,
                     nome: "Exemplo de tarefa",
                     data: `${year}-${month}-${day}`,
                     completo: false,
-                    descricao: "Descrição",
+                    descricao: "Exemplo de descrição",
                 }
             ];
             dados.progresso.push(0);
@@ -58,8 +62,8 @@ export function newEnv(user, dados) {
             botao.style = "display: block";
 
             // escreve no localStorage em qual página o usuário está agr
-            cookie('env', name);
-            window.location.href = "todolist.html";   
+            cookie('env', nameId);
+            window.location.href = "todolist.html";
         }
     })
 }

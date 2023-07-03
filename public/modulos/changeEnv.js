@@ -1,8 +1,8 @@
 import { display } from './display.js';
-import { add } from './add.js';
 import { cookie, getCookie } from './cookie.js';
 
-export function changeEnv(event, user) {
+export function changeEnv(event) {
+    let user = getCookie('logado');
     let oldEnv = getCookie('env');
     let dados = JSON.parse(localStorage.getItem(user));
     document.querySelector(`#env_button-${oldEnv}`).style = "background-color: rgba(94,200,174,255)";
@@ -18,7 +18,7 @@ export function changeEnv(event, user) {
     
     // seta o novo env para o que o usuário clicou, e da display
     cookie('env', name);
-    display(dados.todolist[name], user, add, getCookie);
+    display();
     console.log('env: ', name);
     //document.querySelector("#pag_atual").innerHTML = `Você está em: ${name}`;
 

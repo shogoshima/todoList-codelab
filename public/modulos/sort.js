@@ -1,5 +1,6 @@
 import { displayTask } from './displayTask.js';
 import { add } from './add.js';
+import { getCookie } from "./cookie.js";
 
 function swapElements(arr, i1, i2) {
     let temp = arr[i1];
@@ -7,7 +8,10 @@ function swapElements(arr, i1, i2) {
     arr[i2] = temp;
 }
 
-export function sort(user, dados, env) {
+export function sort() {
+    let user = getCookie('logado');
+    let env = getCookie('env');
+    let dados = JSON.parse(localStorage.getItem(user));
     let lista = dados.todolist[env];
 
     // bubble sort rsrs

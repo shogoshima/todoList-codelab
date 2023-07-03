@@ -131,6 +131,10 @@ body {
     height: 15px;
     margin-top: 1px;
 }
+.arrow {
+    height: 15px;
+    margin-top: 5px;
+}
 
 .color {
     height: 15px;

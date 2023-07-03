@@ -23,9 +23,9 @@ export function cadastrar() {
         todolist: {
             tarefas: [
                 {
-                    descricao: "Descrição",
                     id: 0,
                     nome: "Exemplo de tarefa",
+                    descricao: "Exemplo de descrição",
                     data: `${year}-${month}-${day}`,
                     completo: false,
                 }

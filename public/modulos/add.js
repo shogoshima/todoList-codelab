@@ -2,15 +2,19 @@ import { getCookie } from "./cookie.js";
 import { removeEnv } from "./removeEnv.js";
 
 // dados = dados do usuario logado
-export function add(user) {
-    let dados = JSON.parse(localStorage.getItem(user));
+export function add() {
+    // pega os dados do usuário
+    let user = getCookie('logado');
     let env = getCookie('env');
+    let dados = JSON.parse(localStorage.getItem(user));
     let lista = dados.todolist[env];
-    // o id vai ser o tamanho da lista
+
+    // a id que vai ser atribuída à task vai ser o número máximo que existe dentro da lista de tasks + 1
     const ids = lista.map(object => {
         return object.id;
     })
     let id = (lista.length == null || lista.length == undefined || lista.length == 0) ? 0 : Math.max(...ids) + 1;
+
     // criando elemento div (task)
     let div= document.createElement('div');
     // dando um class para a div
@@ -20,8 +24,9 @@ export function add(user) {
     div.setAttribute('id', 'task-' + id);
     div.setAttribute('class', 'task');
     let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
-                    <input class="task_name" id="task_name-${id}" onClick="this.select();">
-                    <button class="more" id="more-${id}">v</button>
+                    <input class="task_name" id="task_name-${id}" onClick="this.select()">
+                    <button class="more" id="more-${id}">
+                    <img class="arrow" id="arrow-${id}" src="./img/down-arrow.png"></button>
                     <input class="date" id="date-${id}" type="date">
                     <div class="color" id="color-${id}"></div>
                     <button class="remove" id="remove-${id}">
