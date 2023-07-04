@@ -6,6 +6,7 @@ body {
 }
 
 .topnav {
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,24 +14,20 @@ body {
     background-color: #333;
 }
 .topnav h1 {
+    font-size: large;
     color: #f2f2f2;
-}
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 30px 20px;
-    text-decoration: none;
-    font-size: 17px;
 }
 #detailUser {
-    padding: 22px;
-    
+    padding: 5px;
 }
 #imgUser {
     height: 30px;
 }
-.topnav a.active {
+.topnav #expand_btn {
+    font-size: large;
+    border: 0px;
+    height: 40px;
+    width: 40px;
     background-color: #04AA6D;
     color: white;
 }
@@ -70,7 +67,6 @@ body {
 /* lado das tasks */
 #main {
     font-size: 30px;
-    padding: 50px 50px;
     animation: fadein 2s;
     transition: .2s;
 }
@@ -93,6 +89,7 @@ body {
     align-items: center;
     background-color: rgb(222, 222, 222);
     border-style: solid;
+    margin: 20px;
     border-width: 3px;
     border-radius: 10px;
     padding: 3%;
