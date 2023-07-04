@@ -285,11 +285,14 @@ body {
 }
 
 @media screen 
-    and (max-device-width: 700px) {
+    and (max-device-width: 768px) {
 
         #main {
-            margin-left: 0px;
-            padding: 3%;
+            margin-left: 0;
+        }
+
+        #main.expand {
+            margin-left: 0;
         }
 
         #sidenav {
@@ -298,13 +301,19 @@ body {
         }
 
         #sidenav.expand {
-            width: 100%;
+            width: 0%;
         }
+
         .progress{
             display: flex;
             justify-content: center;
             font-size: medium; 
         }
+
+        #list {
+            margin: 5%;
+        }
+
         #newtask{
             
         }
