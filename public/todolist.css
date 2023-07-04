@@ -326,4 +326,12 @@ no local de usuario */
         #sidenav.expand {
             width: 100%;
         }
+        .progress{
+            display: flex;
+            justify-content: center;
+            font-size: medium; 
+        }
+        #newtask{
+            
+        }
     }
