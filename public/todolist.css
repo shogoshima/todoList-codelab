@@ -1,7 +1,8 @@
 body {
     font-family: "Lato", sans-serif;
     background-color: rgb(222, 222, 222);
-    overflow: scroll; /* Show scrollbars */
+    overflow: scroll;
+    /* Show scrollbars */
     margin: 0;
 }
 
@@ -13,16 +14,47 @@ body {
     overflow: hidden;
     background-color: #333;
 }
+
 .topnav h1 {
     font-size: large;
     color: #f2f2f2;
 }
-#detailUser {
+
+.detailUser {
     padding: 5px;
+    position: relative;
+    background-color: #cecece;
+    cursor: pointer;
 }
+/* popup que surge quando o usuário clica
+no local de usuario */
+.user_popup {
+    display: none;
+    position: fixed;
+    background-color: #bababa;
+    right: 10px;
+    margin-top: 10px;
+    width: 100px;
+    height: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 2px #474747;
+}
+@keyframes popup {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes unpopup {
+    to { opacity: 0; }
+from { opacity: 1; }
+}
+
 #imgUser {
     height: 30px;
 }
+
 .topnav #expand_btn {
     font-size: large;
     border: 0px;
@@ -40,7 +72,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(94,200,174,255);
+    background-color: rgba(94, 200, 174, 255);
     overflow-x: hidden;
     padding: 0px;
 
@@ -76,8 +108,13 @@ body {
 }
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* div que engloba toda as tasks. 
@@ -100,10 +137,22 @@ body {
     font-size: medium;
     margin-right: 80%;
     cursor: pointer;
-    background-color: gray;
     padding: 5px;
     border-radius: 3px;
     margin-top: 10px;
+    border: none;
+    transition: transform .1s, box-shadow .1s, background-color .1s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #04AA6D;
+    color: #f0f2ff;
+    padding: 0.8%;
+    border: none;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+#new_task:hover {
+    transform: scale(1.02);
 }
 
 /* task com tudo */
@@ -122,15 +171,31 @@ body {
     transition: background-color 0.25s ease-out;
     animation: addTask 0.25s ease-out;
 }
+
 /* animação que faz com que a task surja de cima */
 @keyframes addTask {
-    from { opacity: 0; height: 0px; }
-    to { opacity: 1; height: 40px; }
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+
+    to {
+        opacity: 1;
+        height: 40px;
+    }
 }
+
 /* animacao de quando a task é removida */
 @keyframes removeTask {
-    from { height: 40px; opacity: 1; }
-    to { height: 0px; opacity: 0; }
+    from {
+        height: 40px;
+        opacity: 1;
+    }
+
+    to {
+        height: 0px;
+        opacity: 0;
+    }
 }
 
 .task:hover {
@@ -145,6 +210,7 @@ body {
     border: 0px;
     width: 80%;
 }
+
 .task_name:hover {
     /*background-color: brown;
     transition: background-color 1s ease-out;*/
@@ -168,10 +234,12 @@ body {
     border: 0px;
     background-color: rgb(222, 222, 222);
 }
+
 .trash {
     height: 15px;
     margin-top: 1px;
 }
+
 .arrow {
     height: 15px;
     margin-top: 5px;
@@ -199,7 +267,7 @@ body {
 
 /* cada botão da categoria */
 .env_button {
-    background-color: rgba(94,200,174,255);
+    background-color: rgba(94, 200, 174, 255);
     cursor: pointer;
     border-radius: 10px;
     font-size: larger;
@@ -207,6 +275,7 @@ body {
     height: 80%;
     transition: background-color 0.5s ease-out;
 }
+
 .env_button:hover {
     background-color: rgb(158, 223, 208);
     transition: background-color 0.5s ease-out;
@@ -220,6 +289,7 @@ body {
     font-size: larger;
     cursor: pointer;
 }
+
 #new_env:hover {
     background-color: white;
     transition: background-color 1s ease-out;
@@ -233,10 +303,16 @@ body {
     border-radius: 7px;
     animation: expande 0.25s ease-out
 }
+
 /* animação */
 @keyframes expande {
-    from { width: 0%; }
-    to { width: 95%; }
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 95%;
+    }
 }
 
 /* barra de progresso */
@@ -252,18 +328,39 @@ body {
     width: 87%;
     animation: addDesc 0.1s ease-out;
 }
+
 .descInput {
     width: 100%;
     resize: none;
 }
+
 @keyframes removeDesc {
-    0% { height: 60px; opacity: 1; }
-    50% { height: 30px; opacity: 0; }
-    100% { height: 0px; opacity: 0;}
+    0% {
+        height: 60px;
+        opacity: 1;
+    }
+
+    50% {
+        height: 30px;
+        opacity: 0;
+    }
+
+    100% {
+        height: 0px;
+        opacity: 0;
+    }
 }
+
 @keyframes addDesc {
-    from { height: 0px; opacity: 0; }
-    to { height: 60px; opacity: 1; }
+    from {
+        height: 0px;
+        opacity: 0;
+    }
+
+    to {
+        height: 60px;
+        opacity: 1;
+    }
 }
 
 /* o botao que aparece quando todas as tasks estão resolvidas */
@@ -275,13 +372,29 @@ body {
     border-radius: 10px;
     animation: addRemover 0.2s linear;
 }
+
 @keyframes addRemover {
-    from { width: 0px; opacity: 0; }
-    to { width: 100px; opacity: 1; }
+    from {
+        width: 0px;
+        opacity: 0;
+    }
+
+    to {
+        width: 100px;
+        opacity: 1;
+    }
 }
+
 @keyframes removeRemover {
-    to { width: 0px; opacity: 0; }
-    from { width: 100px; opacity: 1; }
+    to {
+        width: 0px;
+        opacity: 0;
+    }
+
+    from {
+        width: 100px;
+        opacity: 1;
+    }
 }
 
 @media screen 
@@ -295,10 +408,10 @@ body {
             margin-left: 0;
         }
 
-        #sidenav {
-            width: 0;
-            padding: 0;
-        }
+    #sidenav {
+        width: 0;
+        padding: 0;
+    }
 
         #sidenav.expand {
             width: 60%;
@@ -318,3 +431,21 @@ body {
             
         }
     }
+
+#sort {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #04AA6D;
+    background-color: #f0f2ff;
+    border: solid #04AA6D;
+    font-size: medium;
+    font-weight: bold;
+    margin: 2%;
+    padding: 0.7%;
+    border-radius: 20px;
+    transition: transform .1s, box-shadow .1s, background-color .1s;
+}
+
+#sort:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}

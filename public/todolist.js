@@ -6,6 +6,7 @@ import { edit, remove } from './modulos/edit.js';
 import { getCookie } from './modulos/cookie.js';
 import { sort } from './modulos/sort.js';
 import { description } from './modulos/description.js';
+import { popup } from './modulos/popup.js';
 
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
@@ -56,4 +57,8 @@ document.querySelector('#expand_btn').addEventListener("click", () => {
     let sidenav = document.querySelector('#sidenav');
     sidenav.classList.toggle('expand');
     document.querySelector('#main').classList.toggle('expand');
+})
+
+document.querySelector(".detailUser").addEventListener("click", () => {
+    popup();
 })
