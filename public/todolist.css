@@ -300,4 +300,12 @@ body {
         #sidenav.expand {
             width: 100%;
         }
+        .progress{
+            display: flex;
+            justify-content: center;
+            font-size: medium; 
+        }
+        #newtask{
+            
+        }
     }
