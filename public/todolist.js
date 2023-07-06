@@ -7,6 +7,7 @@ import { getCookie } from './modulos/cookie.js';
 import { sort } from './modulos/sort.js';
 import { description } from './modulos/description.js';
 import { popup } from './modulos/popup.js';
+import { logout } from './modulos/logout.js';
 
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
@@ -59,6 +60,12 @@ document.querySelector('#expand_btn').addEventListener("click", () => {
     document.querySelector('#main').classList.toggle('expand');
 })
 
-document.querySelector(".detailUser").addEventListener("click", () => {
+document.querySelector(".detailUser").addEventListener("click", (event) => {
     popup();
+})
+
+document.querySelector("#displayUser").innerHTML = `Usuário: ${user}`;
+
+document.querySelector("#logout").addEventListener("click", () => {
+    logout();
 })

@@ -34,7 +34,7 @@ no local de usuario */
     background-color: #bababa;
     right: 10px;
     margin-top: 10px;
-    width: 100px;
+    width: 250px;
     height: 150px;
     border-radius: 5px;
     padding: 10px;
@@ -52,10 +52,11 @@ from { opacity: 1; }
 }
 
 #imgUser {
-    height: 30px;
+    height: 25px;
 }
 
 .topnav #expand_btn {
+    cursor: pointer;
     font-size: large;
     border: 0px;
     height: 40px;
