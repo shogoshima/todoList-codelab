@@ -1,8 +1,9 @@
 :root {
-    --azul: #98EECC;
-    --verde: #D0F5BE;
-    --bege: #FBFFDC;
-    --marrom: #A4907C;
+    --escuro: #001C30;
+    --meio_escuro: #176B87;
+    --meio_claro: #64CCC5;
+    --claro: #DAFFFB; 
+    --super_claro: #f0f2ff;
 }
 
 /* aqui vamos mexer no css do html do login */
@@ -11,18 +12,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: var(--escuro);
     font-family: Helvetica, sans-serif, serif;
     font-size: larger;
-    color: rgb(222, 222, 222);
+    color: var(--super_claro);
 }
 
 #bloco {
     position: relative;
     height: 450px;
     width: 400px;
-    background: rgb(30, 191, 132);
-    background: radial-gradient(circle, rgba(30, 191, 132, 1) 0%, rgba(157, 228, 203, 1) 48%, rgba(84, 255, 184, 1) 100%);
+    background: var(--meio_claro);
+    /* background: radial-gradient(circle, rgba(30, 191, 132, 1) 0%, rgba(157, 228, 203, 1) 48%, rgba(84, 255, 184, 1) 100%); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,10 +92,10 @@ button {
     font-family: Helvetica, sans-serif, serif;
     font-weight: 400;
     transition: transform .001s;
-    background-color: rgb(255, 129, 190);
+    background-color: var(--claro);
     color: rgb(47, 43, 43);
     border-style: solid;
-    border-color: rgb(255, 129, 190);
+    border-color: var(--claro);
 }
 
 
