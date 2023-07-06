@@ -62,6 +62,7 @@ no local de usuario */
     display: none;
     position: fixed;
     background-color: var(--escuro);
+    color: var(--super_claro);
     right: 10px;
     margin-top: 10px;
     width: 250px;
@@ -247,7 +248,12 @@ from { opacity: 1; }
     margin-right: 10px;
     height: 20px;
     border: 0px;
-    background-color: rgb(222, 222, 222);
+    background-color: var(--meio_escuro);
+}
+
+.more {
+    border: 0px;
+    background-color: var(--meio_claro);
 }
 
 .trash {
@@ -270,21 +276,18 @@ from { opacity: 1; }
 /* classe pai que engloba os botões da categoria */
 .envs {
     margin-top: 20px;
-    margin-right: 10%;
-    margin-left: 10%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
     align-items: center;
     font-size: medium;
-
 }
 
 /* cada botão da categoria */
 .env_button {
     background-color: var(--meio_claro);
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: larger;
     width: 100%;
     height: 80%;
@@ -298,6 +301,7 @@ from { opacity: 1; }
 
 /* botão de quando se vai criar uma nova categoria */
 #new_env {
+    margin-top: 10px;
     background-color: var(--meio_claro);
     border: 1px;
     border-radius: 6%;
@@ -342,6 +346,8 @@ from { opacity: 1; }
 .description {
     width: 87%;
     animation: addDesc 0.1s ease-out;
+    border: 0px;
+    background-color: var(--meio_escuro);
 }
 
 .descInput {
@@ -380,13 +386,21 @@ from { opacity: 1; }
 
 /* o botao que aparece quando todas as tasks estão resolvidas */
 #botaoRemover {
-    cursor: pointer;
-    height: 30px;
-    width: 100px;
-    background-color: var(--escuro);
-    color: white;
-    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: var(--escuro);
+    background-color: var(--super_claro);
+    border: solid var(--escuro);
+    font-size: medium;
+    font-weight: bold;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 20px;
+    transition: transform .1s, box-shadow .1s, background-color .1s;
     animation: addRemover 0.2s linear;
+}
+#botaoRemover:hover {
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 @keyframes addRemover {
@@ -396,7 +410,7 @@ from { opacity: 1; }
     }
 
     to {
-        width: 100px;
+        width: 90px;
         opacity: 1;
     }
 }
@@ -408,7 +422,7 @@ from { opacity: 1; }
     }
 
     from {
-        width: 100px;
+        width: 90px;
         opacity: 1;
     }
 }

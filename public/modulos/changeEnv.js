@@ -5,7 +5,7 @@ export function changeEnv(event) {
     let user = getCookie('logado');
     let oldEnv = getCookie('env');
     let dados = JSON.parse(localStorage.getItem(user));
-    document.querySelector(`#env_button-${oldEnv}`).style = "background-color: rgba(94,200,174,255)";
+    document.querySelector(`#env_button-${oldEnv}`).style = "background-color: var(--meio_claro)";
     // o event é o evento que o addEventListener pegou.
     // nesse caso seria o click do elemento com id= "new_env"
     // quero pegar o nome em que o usuário clicou. Pra isso pego o value do botão
