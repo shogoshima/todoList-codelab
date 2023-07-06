@@ -1,3 +1,10 @@
+:root {
+    --azul: #98EECC;
+    --verde: #D0F5BE;
+    --bege: #FBFFDC;
+    --marrom: #A4907C;
+}
+
 /* aqui vamos mexer no css do html do login */
 body {
     height: 95vh;

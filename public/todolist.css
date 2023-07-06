@@ -1,6 +1,22 @@
+/* paleta de cores escolhida:
+azul clarinho: #98EECC
+verdinho bem pastelzinho: #D0F5BE
+begezinho: #FBFFDC
+marronzinho suavinho: #A4907C
+*/
+:root {
+    --azul: #98EECC;
+    --verde: #D0F5BE;
+    --bege: #FBFFDC;
+    --marrom: #A4907C; 
+}
+/* na hora de colocar as cores, utilizar a sintaxe:
+background-color: var(--azul);
+por exemplo */
+
 body {
     font-family: "Lato", sans-serif;
-    background-color: rgb(222, 222, 222);
+    background-color: var(--bege);
     overflow: scroll;
     /* Show scrollbars */
     margin: 0;
@@ -12,7 +28,7 @@ body {
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--marrom);
 }
 
 .topnav img {
@@ -30,17 +46,21 @@ body {
 }
 
 .detailUser {
-    padding: 5px;
+    height: 40px;
+    width: 40px;
     position: relative;
-    background-color: #cecece;
+    background-color: var(--azul);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* popup que surge quando o usuário clica
 no local de usuario */
 .user_popup {
     display: none;
     position: fixed;
-    background-color: #bababa;
+    background-color: var(--azul);
     right: 10px;
     margin-top: 10px;
     width: 250px;
@@ -54,7 +74,6 @@ no local de usuario */
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 @keyframes unpopup {
     to { opacity: 0; }
 from { opacity: 1; }
@@ -70,8 +89,8 @@ from { opacity: 1; }
     border: 0px;
     height: 40px;
     width: 40px;
-    background-color: #04AA6D;
-    color: white;
+    background-color: var(--azul);
+    color: black;
 }
 
 /* barra de navegação */
@@ -135,10 +154,9 @@ from { opacity: 1; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(222, 222, 222);
-    border-style: solid;
+    background-color: rgb(168, 168, 168);
+    border: 3px solid rgb(168, 168, 168);
     margin: 20px;
-    border-width: 3px;
     border-radius: 10px;
     padding: 3%;
 }
@@ -171,47 +189,31 @@ from { opacity: 1; }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7px;
-    border-style: outset;
+    gap: 5px;
     border-width: 1px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 10px;
     width: 90%;
     height: 40px;
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(199, 199, 199);
     transition: background-color 0.25s ease-out;
     animation: addTask 0.25s ease-out;
 }
+.task:hover {
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease-out;
+}
+
 
 /* animação que faz com que a task surja de cima */
 @keyframes addTask {
-    from {
-        opacity: 0;
-        height: 0px;
-    }
-
-    to {
-        opacity: 1;
-        height: 40px;
-    }
+    from { opacity: 0; height: 0px; }
+    to { opacity: 1; height: 40px; }
 }
-
 /* animacao de quando a task é removida */
 @keyframes removeTask {
-    from {
-        height: 40px;
-        opacity: 1;
-    }
-
-    to {
-        height: 0px;
-        opacity: 0;
-    }
-}
-
-.task:hover {
-    background-color: rgb(156, 166, 163);
-    transition: background-color 0.5s ease-out;
+    from { height: 40px; opacity: 1; }
+    to { height: 0px; opacity: 0; }
 }
 
 /* local de input do nome da task */
@@ -438,8 +440,8 @@ from { opacity: 1; }
             margin: 5%;
         }
 
-        #newtask{
-            
+        .date {
+            width: 31px;
         }
     }
 

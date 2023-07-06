@@ -38,22 +38,19 @@ export function edit(event) {
     if (classe === "task_name") {
         // let imgRemove = document.querySelector(`#trash-${taskId}`);
         // let botaoRemove = document.querySelector(`#remove-${taskId}`);
-        
-        task.style = "background-color: rgb(156, 166, 163);";
         lista[index].nome = document.querySelector(`#task_name-${taskId}`).value;
 
         // se o usuário apertar enter, o elemento fica claro de novo
         task.addEventListener('keypress', (event) => {
             if (event.key === "Enter") {
-                task.style = "background-color: rgb(222, 222, 222)";
                 document.querySelector(`#task_name-${taskId}`).blur();
             }
         })
         // se o usuário clicar fora, o elemento fica claro de novo
-        window.addEventListener('click', (event) => {
-            if (!task.contains(event.target))
-                task.style = "background-color: rgb(222, 222, 222)";
-        })
+        // window.addEventListener('click', (event) => {
+        //     if (!task.contains(event.target))
+        //         task.style = "background-color: rgb(222, 222, 222)";
+        // })
     } else if (classe === "checkbox") {
         // atualiza nos dados se foi marcado como 'true' ou 'false'
         lista[index].completo = document.querySelector(`#checkbox-${taskId}`).checked;
