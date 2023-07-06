@@ -5,10 +5,11 @@ begezinho: #FBFFDC
 marronzinho suavinho: #A4907C
 */
 :root {
-    --azul: #98EECC;
-    --verde: #D0F5BE;
-    --bege: #FBFFDC;
-    --marrom: #A4907C; 
+    --escuro: #001C30;
+    --meio_escuro: #176B87;
+    --meio_claro: #64CCC5;
+    --claro: #DAFFFB; 
+    --super_claro: #f0f2ff;
 }
 /* na hora de colocar as cores, utilizar a sintaxe:
 background-color: var(--azul);
@@ -16,7 +17,7 @@ por exemplo */
 
 body {
     font-family: "Lato", sans-serif;
-    background-color: var(--bege);
+    background-color: var(--claro);
     overflow: scroll;
     /* Show scrollbars */
     margin: 0;
@@ -28,7 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    background-color: var(--marrom);
+    background-color: var(--meio_escuro);
 }
 
 .topnav img {
@@ -49,7 +50,7 @@ body {
     height: 40px;
     width: 40px;
     position: relative;
-    background-color: var(--azul);
+    background-color: var(--claro);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -60,7 +61,7 @@ no local de usuario */
 .user_popup {
     display: none;
     position: fixed;
-    background-color: var(--azul);
+    background-color: var(--escuro);
     right: 10px;
     margin-top: 10px;
     width: 250px;
@@ -89,8 +90,8 @@ from { opacity: 1; }
     border: 0px;
     height: 40px;
     width: 40px;
-    background-color: var(--azul);
-    color: black;
+    background-color: var(--escuro);
+    color: var(--super_claro);
 }
 
 /* barra de navegação */
@@ -101,8 +102,7 @@ from { opacity: 1; }
     z-index: 1;
     top: 0;
     left: 0;
-    color: #333;
-    background-color: #333;
+    background-color: var(--escuro);
     overflow-x: hidden;
     padding: 0px;
 
@@ -154,8 +154,8 @@ from { opacity: 1; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(168, 168, 168);
-    border: 3px solid rgb(168, 168, 168);
+    background-color: var(--meio_claro);
+    border: 3px solid var(--meio_claro);
     margin: 20px;
     border-radius: 10px;
     padding: 3%;
@@ -172,7 +172,7 @@ from { opacity: 1; }
     border: none;
     transition: transform .1s, box-shadow .1s, background-color .1s;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: #04AA6D;
+    background-color: var(--escuro);
     color: #f0f2ff;
     padding: 0.8%;
     border: none;
@@ -195,9 +195,10 @@ from { opacity: 1; }
     margin-top: 10px;
     width: 90%;
     height: 40px;
-    background-color: rgb(199, 199, 199);
+    background-color: var(--meio_escuro);
     transition: background-color 0.25s ease-out;
     animation: addTask 0.25s ease-out;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .task:hover {
     background-color: rgb(230, 230, 230);
@@ -222,6 +223,7 @@ from { opacity: 1; }
     margin-right: auto;
     border: 0px;
     width: 80%;
+    background-color: var(--meio_escuro);
 }
 
 .task_name:hover {
@@ -280,7 +282,7 @@ from { opacity: 1; }
 
 /* cada botão da categoria */
 .env_button {
-    background-color: rgba(128, 249, 237, 255);
+    background-color: var(--meio_claro);
     cursor: pointer;
     border-radius: 10px;
     font-size: larger;
@@ -296,7 +298,7 @@ from { opacity: 1; }
 
 /* botão de quando se vai criar uma nova categoria */
 #new_env {
-    background-color: rgb(128, 249, 237);
+    background-color: var(--meio_claro);
     border: 1px;
     border-radius: 6%;
     font-size: larger;
@@ -305,7 +307,7 @@ from { opacity: 1; }
 
 #new_env:hover {
     background-color: white;
-    transition: background-color 1s ease-out;
+    transition: background-color 0.5s ease-out;
 }
 
 /* input q aparece quando aperta no botao de adicionar env */
@@ -381,7 +383,8 @@ from { opacity: 1; }
     cursor: pointer;
     height: 30px;
     width: 100px;
-    background-color: rgb(0, 190, 0);
+    background-color: var(--escuro);
+    color: white;
     border-radius: 10px;
     animation: addRemover 0.2s linear;
 }
@@ -447,9 +450,9 @@ from { opacity: 1; }
 
 #sort {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: #04AA6D;
-    background-color: #f0f2ff;
-    border: solid #04AA6D;
+    color: var(--escuro);
+    background-color: var(--super_claro);
+    border: solid var(--escuro);
     font-size: medium;
     font-weight: bold;
     margin: 2%;
