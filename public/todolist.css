@@ -98,23 +98,23 @@ from { opacity: 1; }
 /* barra de navegação */
 #sidenav {
     height: 100%;
-    width: 0px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: var(--escuro);
     overflow-x: hidden;
-    padding: 0px;
+    padding: 20px;
 
     position: fixed;
     overflow: hidden;
     transition: .2s;
 }
 
-#sidenav.expand {
-    width: 200px;
-    padding: 20px;
+#sidenav.retract {
+    width: 0px;
+    padding: 0px;
 }
 
 /* texto escrito todolist */
@@ -132,10 +132,11 @@ from { opacity: 1; }
     font-size: 30px;
     animation: fadein 2s;
     transition: .2s;
+    margin-left: 240px;
 }
 
-#main.expand {
-    margin-left: 240px;
+#main.retract {
+    margin-left: 0px;
 }
 
 @keyframes fadein {
