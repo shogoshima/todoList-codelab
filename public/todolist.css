@@ -15,9 +15,18 @@ body {
     background-color: #333;
 }
 
-.topnav h1 {
-    font-size: large;
-    color: #f2f2f2;
+.topnav img {
+    height: 40px;
+}
+
+.topnav div {
+    display: flex;
+    flex-direction: row;
+}
+
+#logotxt {
+    font-size: small;
+    color: white;
 }
 
 .detailUser {
@@ -73,7 +82,8 @@ from { opacity: 1; }
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(94, 200, 174, 255);
+    color: #333;
+    background-color: #333;
     overflow-x: hidden;
     padding: 0px;
 
@@ -91,7 +101,7 @@ from { opacity: 1; }
 #todolist {
     padding: 5px 5px 5px 5px;
     font-size: 30px;
-    color: rgb(47, 43, 43);
+    color: rgb(255, 255, 255);
     display: block;
     text-decoration: none;
     text-align: center;
@@ -268,7 +278,7 @@ from { opacity: 1; }
 
 /* cada botão da categoria */
 .env_button {
-    background-color: rgba(94, 200, 174, 255);
+    background-color: rgba(128, 249, 237, 255);
     cursor: pointer;
     border-radius: 10px;
     font-size: larger;
@@ -278,13 +288,13 @@ from { opacity: 1; }
 }
 
 .env_button:hover {
-    background-color: rgb(158, 223, 208);
+    background-color: rgb(128, 249, 237);
     transition: background-color 0.5s ease-out;
 }
 
 /* botão de quando se vai criar uma nova categoria */
 #new_env {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(128, 249, 237);
     border: 1px;
     border-radius: 6%;
     font-size: larger;
