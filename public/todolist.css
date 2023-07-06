@@ -98,23 +98,23 @@ from { opacity: 1; }
 /* barra de navegação */
 #sidenav {
     height: 100%;
-    width: 200px;
+    width: 0px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: var(--escuro);
     overflow-x: hidden;
-    padding: 20px;
+    padding: 0px;
 
     position: fixed;
     overflow: hidden;
     transition: .2s;
 }
 
-#sidenav.retract {
-    width: 0px;
-    padding: 0px;
+#sidenav.expand {
+    width: 200px;
+    padding: 20px;
 }
 
 /* texto escrito todolist */
@@ -132,11 +132,10 @@ from { opacity: 1; }
     font-size: 30px;
     animation: fadein 2s;
     transition: .2s;
-    margin-left: 240px;
 }
 
-#main.retract {
-    margin-left: 0px;
+#main.expand {
+    margin-left: 240px;
 }
 
 @keyframes fadein {
@@ -272,6 +271,25 @@ from { opacity: 1; }
     width: 15px;
     border-radius: 50%;
     background-color: black;
+    resize: none;
+}
+
+#sort {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: var(--escuro);
+    background-color: var(--super_claro);
+    border: solid var(--escuro);
+    font-size: medium;
+    font-weight: bold;
+    margin: 2%;
+    padding: 0.7%;
+    border-radius: 20px;
+    transition: transform .1s, box-shadow .1s, background-color .1s;
+}
+
+#sort:hover {
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 /* classe pai que engloba os botões da categoria */
@@ -435,23 +453,34 @@ from { opacity: 1; }
             margin-left: 0;
         }
 
-        #main.expand {
+        #main.retract {
             margin-left: 0;
         }
 
-    #sidenav {
-        width: 0;
-        padding: 0;
-    }
+        #sidenav {
+            width: 0;
+            padding: 0;
+        }
 
-        #sidenav.expand {
-            width: 60%;
+        #sidenav.retract {
+            width: 80%;
+            padding-top: 3%;
+            box-shadow: rgba(0, 0, 0, 0.299) 4px 0 5px 1px;
+            right-sha
+        }
+
+        #expand_btn {
+            z-index: 1;
+        }
+
+        .env_button {
+            width: 55%;
         }
 
         .progress{
             display: flex;
             justify-content: center;
-            font-size: medium; 
+            font-size: large; 
         }
 
         #list {
@@ -459,24 +488,63 @@ from { opacity: 1; }
         }
 
         .date {
-            width: 31px;
+            width: 30px;
+        }
+
+        .task {
+            gap: 5px;
+            border-radius: 20px;
+            width: 100%;
+            height: 30px;
+        }
+
+        #list {
+            margin: 2%;
+            border-radius: 10px;
+            padding: 3%;
+        }
+
+        #new_task {
+            margin-left: 8%;
+        }
+
+        .task_name {
+            width: 45%;
+        }
+
+        .more {
+            height: 22px;
+            width: 22px;
+            border-radius: 20%;
+        }
+
+        .arrow {
+            height: 12px;
+            margin-top: 4px;
+            margin-left: 0;
+        }
+
+        .color {
+            height: 13px;
+            width: 13px;
+            margin-left: 5px;
+        }
+
+        .date {
+            height: 20px;
+            width: 20px;
+            border-radius: 20%;
+            border: none;
+            background-color: var(--claro);
+        }
+
+        .trash {
+            margin: 0;
+        }
+
+        #sort {
+            font-size: small;
+            height: 24px;
+            margin: 1%;
         }
     }
-
-#sort {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: var(--escuro);
-    background-color: var(--super_claro);
-    border: solid var(--escuro);
-    font-size: medium;
-    font-weight: bold;
-    margin: 2%;
-    padding: 0.7%;
-    border-radius: 20px;
-    transition: transform .1s, box-shadow .1s, background-color .1s;
-}
-
-#sort:hover {
-    transform: scale(1.02);
-    cursor: pointer;
-}
