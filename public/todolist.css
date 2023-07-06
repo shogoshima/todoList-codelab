@@ -98,23 +98,23 @@ from { opacity: 1; }
 /* barra de navegação */
 #sidenav {
     height: 100%;
-    width: 0px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: var(--escuro);
     overflow-x: hidden;
-    padding: 0px;
+    padding: 20px;
 
     position: fixed;
     overflow: hidden;
     transition: .2s;
 }
 
-#sidenav.expand {
-    width: 200px;
-    padding: 20px;
+#sidenav.retract {
+    width: 0px;
+    padding: 0px;
 }
 
 /* texto escrito todolist */
@@ -132,10 +132,11 @@ from { opacity: 1; }
     font-size: 30px;
     animation: fadein 2s;
     transition: .2s;
+    margin-left: 240px;
 }
 
-#main.expand {
-    margin-left: 240px;
+#main.retract {
+    margin-left: 0px;
 }
 
 @keyframes fadein {
@@ -449,6 +450,7 @@ from { opacity: 1; }
     and (max-device-width: 768px) {
 
         #main {
+              
             margin-left: 0;
         }
 
@@ -465,7 +467,6 @@ from { opacity: 1; }
             width: 80%;
             padding-top: 3%;
             box-shadow: rgba(0, 0, 0, 0.299) 4px 0 5px 1px;
-            right-sha
         }
 
         #expand_btn {
@@ -546,4 +547,4 @@ from { opacity: 1; }
             height: 24px;
             margin: 1%;
         }
-    }
+} 
