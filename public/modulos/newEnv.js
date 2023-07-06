@@ -1,4 +1,5 @@
 import { cookie, getCookie } from "./cookie.js";
+import { display } from "./display.js";
 
 // quando clico, devo:
 // solicitar um nome pro novo environment: Input -> aperta enter -> confirma o nome do env -> vira texto
@@ -61,9 +62,15 @@ export function newEnv() {
             localStorage.setItem(user, dados);
             botao.style = "display: block";
 
+            // pega o env velho que tava selecionado
+            let oldEnv = getCookie('env');
+            document.querySelector(`#env_button-${oldEnv}`).style = "background-color: var(--meio_claro)";
+
             // escreve no localStorage em qual página o usuário está agr
             cookie('env', nameId);
-            window.location.href = "todolist.html";
+            display();
+            console.log('env: ', nameId);
+            document.querySelector(`#env_button-${nameId}`).style = "background-color: rgb(158, 223, 208)";
         }
     })
 }

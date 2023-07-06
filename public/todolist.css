@@ -320,7 +320,6 @@ from { opacity: 1; }
 
 /* botão de quando se vai criar uma nova categoria */
 #new_env {
-    margin-top: 10px;
     background-color: var(--meio_claro);
     border: 1px;
     border-radius: 6%;
