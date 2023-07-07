@@ -24,7 +24,7 @@ export function add() {
     div.setAttribute('id', 'task-' + id);
     div.setAttribute('class', 'task');
     let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
-                    <input class="task_name" id="task_name-${id}" onClick="this.select()">
+                    <input class="task_name" id="task_name-${id}" placeholder="Tarefa"">
                     <button class="more" id="more-${id}">
                     <img class="arrow" id="arrow-${id}" src="./img/down-arrow.png"></button>
                     <input class="date" id="date-${id}" type="date">

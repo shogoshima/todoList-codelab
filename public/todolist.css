@@ -175,6 +175,7 @@ no local de usuario */
     margin: 20px;
     border-radius: 10px;
     padding: 3%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* botao para adicionar tasks */
@@ -438,7 +439,7 @@ no local de usuario */
 
 .descInput {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 80%;
+    width: 84%;
     resize: none;
     font-family: "Lato", sans-serif;
     font-size: medium;
@@ -634,4 +635,21 @@ no local de usuario */
     }
 
 
+}
+
+progress {
+    width: 300px;
+    height: 20px;
+    border: 3px solid var(--escuro);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--claro);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--meio_escuro);
+    border-radius: 10px;
 }
