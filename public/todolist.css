@@ -8,9 +8,10 @@ marronzinho suavinho: #A4907C
     --escuro: #001C30;
     --meio_escuro: #176B87;
     --meio_claro: #64CCC5;
-    --claro: #DAFFFB; 
+    --claro: #DAFFFB;
     --super_claro: #f0f2ff;
 }
+
 /* na hora de colocar as cores, utilizar a sintaxe:
 background-color: var(--azul);
 por exemplo */
@@ -56,6 +57,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /* popup que surge quando o usuário clica
 no local de usuario */
 .user_popup {
@@ -72,13 +74,25 @@ no local de usuario */
     text-align: center;
     box-shadow: 0px 0px 10px 2px #474747;
 }
+
 @keyframes popup {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes unpopup {
-    to { opacity: 0; }
-from { opacity: 1; }
+    to {
+        opacity: 0;
+    }
+
+    from {
+        opacity: 1;
+    }
 }
 
 #imgUser {
@@ -203,6 +217,7 @@ from { opacity: 1; }
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: transform .1s, box-shadow .1s, background-color .1s;
 }
+
 .task:hover {
     transform: scale(1.01);
 }
@@ -210,13 +225,28 @@ from { opacity: 1; }
 
 /* animação que faz com que a task surja de cima */
 @keyframes addTask {
-    from { opacity: 0; height: 0px; }
-    to { opacity: 1; height: 40px; }
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+
+    to {
+        opacity: 1;
+        height: 40px;
+    }
 }
+
 /* animacao de quando a task é removida */
 @keyframes removeTask {
-    from { height: 40px; opacity: 1; }
-    to { height: 0px; opacity: 0; }
+    from {
+        height: 40px;
+        opacity: 1;
+    }
+
+    to {
+        height: 0px;
+        opacity: 0;
+    }
 }
 
 /* local de input do nome da task */
@@ -228,13 +258,16 @@ from { opacity: 1; }
     background-color: var(--meio_escuro);
     color: var(--claro);
 }
+
 .task_name.riscado {
     text-decoration: line-through;
     color: #dafffb70;
 }
+
 .task_name:hover {
     cursor: pointer;
 }
+
 .task_name:focus {
     cursor: text;
     background-color: var(--claro);
@@ -323,10 +356,12 @@ from { opacity: 1; }
     height: 80%;
     transition: background-color 0.2s ease-out;
 }
+
 .env_button.selected {
     background-color: var(--claro);
     transform: scale(1.05) translate(5px);
 }
+
 .env_button:hover {
     background-color: var(--claro);
     transition: background-color 0.2s ease-out;
@@ -353,6 +388,22 @@ from { opacity: 1; }
     text-align: center;
     border-radius: 7px;
     animation: expande 0.25s ease-out
+}
+
+
+#logout {
+    background-color: var(--meio_claro);
+    border: solid var(--super_claro);
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-out;
+    padding: 3%;
+}
+
+#logout:hover {
+    background-color: var(--claro);
+    transition: background-color 0.2s ease-out;
 }
 
 /* animação */
@@ -431,6 +482,7 @@ from { opacity: 1; }
     transition: transform .1s, box-shadow .1s, background-color .1s;
     animation: addRemover 0.2s linear;
 }
+
 #botaoRemover:hover {
     transform: scale(1.02);
     cursor: pointer;
@@ -460,105 +512,106 @@ from { opacity: 1; }
     }
 }
 
-@media screen 
-    and (max-device-width: 768px) {
+@media screen and (max-device-width: 768px) {
 
-        #main {
-              
-            margin-left: 0;
-        }
+    #main {
 
-        #main.retract {
-            margin-left: 0;
-        }
+        margin-left: 0;
+    }
 
-        #sidenav {
-            width: 0;
-            padding: 0;
-        }
+    #main.retract {
+        margin-left: 0;
+    }
 
-        #sidenav.retract {
-            width: 80%;
-            padding-top: 3%;
-            box-shadow: rgba(0, 0, 0, 0.299) 4px 0 5px 1px;
-        }
+    #sidenav {
+        width: 0;
+        padding: 0;
+    }
 
-        #expand_btn {
-            z-index: 1;
-        }
+    #sidenav.retract {
+        width: 80%;
+        padding-top: 3%;
+        box-shadow: rgba(0, 0, 0, 0.299) 4px 0 5px 1px;
+    }
 
-        .env_button {
-            width: 55%;
-        }
+    #expand_btn {
+        z-index: 1;
+    }
 
-        .progress{
-            display: flex;
-            justify-content: center;
-            font-size: large; 
-        }
+    .env_button {
+        width: 55%;
+    }
 
-        #list {
-            margin: 5%;
-        }
+    .progress {
+        display: flex;
+        justify-content: center;
+        font-size: large;
+    }
 
-        .date {
-            width: 30px;
-        }
+    #list {
+        margin: 5%;
+    }
 
-        .task {
-            gap: 5px;
-            border-radius: 20px;
-            width: 100%;
-            height: 30px;
-        }
+    .date {
+        width: 30px;
+    }
 
-        #list {
-            margin: 2%;
-            border-radius: 10px;
-            padding: 3%;
-        }
+    .task {
+        gap: 5px;
+        border-radius: 20px;
+        width: 100%;
+        height: 30px;
+    }
 
-        #new_task {
-            margin-left: 8%;
-        }
+    #list {
+        margin: 2%;
+        border-radius: 10px;
+        padding: 3%;
+    }
 
-        .task_name {
-            width: 45%;
-        }
+    #new_task {
+        margin-left: 8%;
+    }
 
-        .more {
-            height: 22px;
-            width: 22px;
-            border-radius: 20%;
-        }
+    .task_name {
+        width: 45%;
+    }
 
-        .arrow {
-            height: 12px;
-            margin-top: 4px;
-            margin-left: 0;
-        }
+    .more {
+        height: 22px;
+        width: 22px;
+        border-radius: 20%;
+    }
 
-        .color {
-            height: 13px;
-            width: 13px;
-            margin-left: 5px;
-        }
+    .arrow {
+        height: 12px;
+        margin-top: 4px;
+        margin-left: 0;
+    }
 
-        .date {
-            height: 20px;
-            width: 20px;
-            border-radius: 20%;
-            border: none;
-            background-color: var(--claro);
-        }
+    .color {
+        height: 13px;
+        width: 13px;
+        margin-left: 5px;
+    }
 
-        .trash {
-            margin: 0;
-        }
+    .date {
+        height: 20px;
+        width: 20px;
+        border-radius: 20%;
+        border: none;
+        background-color: var(--claro);
+    }
 
-        #sort {
-            font-size: small;
-            height: 24px;
-            margin: 1%;
-        }
-} 
+    .trash {
+        margin: 0;
+    }
+
+    #sort {
+        font-size: small;
+        height: 24px;
+        margin: 1%;
+    }
+
+
+}
