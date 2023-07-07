@@ -64,7 +64,7 @@ document.querySelector(".detailUser").addEventListener("click", (event) => {
     popup();
 })
 
-document.querySelector("#displayUser").innerHTML = `Usuário: ${user}`;
+document.querySelector("#displayUser").innerHTML = `Olá ${user}!`;
 
 document.querySelector("#logout").addEventListener("click", () => {
     logout();
