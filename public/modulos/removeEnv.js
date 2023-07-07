@@ -15,7 +15,7 @@ function nextEnv(user, newEnv) {
 
     // deixa o botao da categoria selecionada clara
     displayEnv();
-    document.querySelector(`#env_button-${newEnv}`).style = "background-color: rgb(158, 223, 208)";
+    document.querySelector(`#env_button-${newEnv}`).classList.add("selected");
 }
 
 // função que verifica se é para remover a categoria ou não, e se sim, cria um botão de remover

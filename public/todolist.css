@@ -201,10 +201,10 @@ from { opacity: 1; }
     transition: background-color 0.25s ease-out;
     animation: addTask 0.25s ease-out;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform .1s, box-shadow .1s, background-color .1s;
 }
 .task:hover {
-    background-color: rgb(230, 230, 230);
-    transition: background-color 0.5s ease-out;
+    transform: scale(1.01);
 }
 
 
@@ -226,26 +226,35 @@ from { opacity: 1; }
     border: 0px;
     width: 80%;
     background-color: var(--meio_escuro);
+    color: var(--claro);
 }
-
+.task_name.riscado {
+    text-decoration: line-through;
+    color: #dafffb70;
+}
 .task_name:hover {
-    /*background-color: brown;
-    transition: background-color 1s ease-out;*/
+    cursor: pointer;
+}
+.task_name:focus {
     cursor: text;
+    background-color: var(--claro);
+    color: var(--escuro);
 }
 
 /* data */
 .date {
     font-size: large;
+    background-color: var(--claro);
 }
 
 /* checkbox */
 .checkbox {
-    margin-left: 10px;
+    margin-left: 13px;
 }
 
 /* botão de remover */
 .remove {
+    cursor: pointer;
     margin-right: 10px;
     height: 20px;
     border: 0px;
@@ -253,6 +262,7 @@ from { opacity: 1; }
 }
 
 .more {
+    cursor: pointer;
     border: 0px;
     background-color: var(--meio_claro);
 }
@@ -311,12 +321,15 @@ from { opacity: 1; }
     font-size: larger;
     width: 100%;
     height: 80%;
-    transition: background-color 0.5s ease-out;
+    transition: background-color 0.2s ease-out;
 }
-
+.env_button.selected {
+    background-color: var(--claro);
+    transform: scale(1.05) translate(5px);
+}
 .env_button:hover {
-    background-color: rgb(128, 249, 237);
-    transition: background-color 0.5s ease-out;
+    background-color: var(--claro);
+    transition: background-color 0.2s ease-out;
 }
 
 /* botão de quando se vai criar uma nova categoria */
@@ -372,6 +385,8 @@ from { opacity: 1; }
 .descInput {
     width: 100%;
     resize: none;
+    font-family: "Lato", sans-serif;
+    font-size: medium;
 }
 
 @keyframes removeDesc {
@@ -411,7 +426,6 @@ from { opacity: 1; }
     border: solid var(--escuro);
     font-size: medium;
     font-weight: bold;
-    margin: 2%;
     padding: 1%;
     border-radius: 20px;
     transition: transform .1s, box-shadow .1s, background-color .1s;

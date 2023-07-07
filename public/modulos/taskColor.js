@@ -4,7 +4,8 @@ export function taskColor(d) {
     let red = 1000 * 60 * 60 * 24;
     let yellow = 1000 * 60 * 60 * 24 * 5;
 
-    let date = new Date(d).getTime();
+    let date = new Date(d);
+    date.setDate(date.getDate() + 1); // nao sei pq mas o javascript registra o dia menos 1
     let now = new Date();
     let dif = date - now;
     if (dif < 0)

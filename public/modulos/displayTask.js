@@ -22,9 +22,7 @@ export function displayTask(index, lista, divBotao) {
     // aqui eu atualizo os valores de acordo com o que tem na lista salva do localStorage
     document.querySelector(`#checkbox-${taskId}`).checked = lista[index].completo;
     if (lista[index].completo) {
-        document.querySelector(`#task_name-${taskId}`).style = `text-decoration: line-through;
-        color: rgba(0, 0, 0, 0.5);
-        `;
+        document.querySelector(`#task_name-${taskId}`).classList.add("riscado");
     }
     document.querySelector(`#task_name-${taskId}`).value = lista[index].nome;
     document.querySelector(`#date-${taskId}`).value = lista[index].data;

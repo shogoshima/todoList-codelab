@@ -64,13 +64,13 @@ export function newEnv() {
 
             // pega o env velho que tava selecionado
             let oldEnv = getCookie('env');
-            document.querySelector(`#env_button-${oldEnv}`).style = "background-color: var(--meio_claro)";
+            document.querySelector(`#env_button-${oldEnv}`).style.backgroundColor = "var(--meio_claro)";
 
             // escreve no localStorage em qual página o usuário está agr
             cookie('env', nameId);
             display();
             console.log('env: ', nameId);
-            document.querySelector(`#env_button-${nameId}`).style = "background-color: rgb(158, 223, 208)";
+            document.querySelector(`#env_button-${nameId}`).classList.toggle("selected");
         }
     })
 }

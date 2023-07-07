@@ -10,7 +10,7 @@ export function edit(event) {
 
     // pego os dados do elemento que ativou o evento (nesse caso, o "oninput")
     // preciso da classe e da id
-    let classe = event.target.className;
+    let classe = event.target.className.split(' ')[0];
     
     // id no formato: "task_name-4"
     let id = event.target.id;
@@ -46,19 +46,14 @@ export function edit(event) {
                 document.querySelector(`#task_name-${taskId}`).blur();
             }
         })
-        // se o usuário clicar fora, o elemento fica claro de novo
-        // window.addEventListener('click', (event) => {
-        //     if (!task.contains(event.target))
-        //         task.style = "background-color: rgb(222, 222, 222)";
-        // })
     } else if (classe === "checkbox") {
         // atualiza nos dados se foi marcado como 'true' ou 'false'
         lista[index].completo = document.querySelector(`#checkbox-${taskId}`).checked;
         // se for 'true', entao vai rodar o de baixo. senao, o outro roda
         if (lista[index].completo) {
             // coloca um risco no texto
-            document.querySelector(`#task_name-${taskId}`).style = `text-decoration: line-through;
-            color: rgba(0, 0, 0, 0.5);`;
+            document.querySelector(`#task_name-${taskId}`).classList.add("riscado");
+
             // atualiza na lista de progresso e mostra o progresso atualizado na barra
             dados.progresso[envNum]++;
             let progresso = dados['progresso'][envNum] / lista.length * 100;
@@ -67,7 +62,7 @@ export function edit(event) {
         } else {
             // atualiza na lista, tira o risco que tinha no texto e mostra o progresso atualizado na barra
             dados['progresso'][envNum]--;
-            document.querySelector(`#task_name-${taskId}`).style = "text-decoration: none";
+            document.querySelector(`#task_name-${taskId}`).classList.remove("riscado");
             let progresso = dados['progresso'][envNum] / lista.length * 100;
             document.querySelector("#barra").value = progresso;
             removeEnv(user, env, progresso);
@@ -93,7 +88,7 @@ export function remove(event) {
     let env = getCookie('env');
     let dados = JSON.parse(localStorage.getItem(user));
 
-    let classe = event.target.className;
+    let classe = event.target.className.split(' ')[0];
     if (classe != "remove" && classe != "trash")
         return 0;
     let id = event.target.id;
