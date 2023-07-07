@@ -8,7 +8,7 @@ export function displayTask(index, lista, divBotao) {
     div.setAttribute('id', 'task-' + taskId);
     div.setAttribute('class', 'task');
     let taskInfo = `<input class="checkbox" id="checkbox-${taskId}" type="checkbox"/>
-                    <input class="task_name" id="task_name-${taskId}" onClick="this.select()"/>
+                    <input class="task_name" id="task_name-${taskId}" placeholder="Tarefa"/>
                     <button class="more" id="more-${taskId}">
                     <img class="arrow" id="arrow-${taskId}" src="./img/down-arrow.png"></button>
                     <input class="date" id="date-${taskId}" type="date">
