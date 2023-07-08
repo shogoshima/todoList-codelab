@@ -21,7 +21,7 @@ export function cadastrar() {
     let dados = {
         senha: pswd,
         todolist: {
-            tarefas: [
+            Tarefas: [
                 {
                     id: 0,
                     nome: "Exemplo de tarefa",
@@ -37,9 +37,9 @@ export function cadastrar() {
         alert("Parece que você esqueceu de digitar algo kkk");
         return 0;
     }
-    console.log(dados.senha);
+    // console.log(dados.senha);
     dados = JSON.stringify(dados);
-    console.log(dados);
+    // console.log(dados);
     localStorage.setItem(user, dados);
     alert("Usuário cadastrado com sucesso!");
 }
@@ -61,11 +61,14 @@ export function login() {
         // encontrei dado do usuario, preciso verificar se a senha está correta
         if (dados.senha == pswd) {
             alert(`Bem vindo(a) de volta, ${user}!`);
-            cookie('env', 'tarefas'); // adiciona onde o usuário vai entrar primeiro
+            let env = Object.keys(dados.todolist)[0]; // pega a primeira env da lista
+            cookie('env', env); // adiciona onde o usuário vai entrar primeiro
             cookie('logado', user); 
             window.location.href = "todolist.html";
         } else {
             alert(`${user}, sua senha está errada. Por favor, tente novamente.`);
         }
+    } else {
+        alert("Esse nome de usuário não foi cadastrado!");
     }
 }

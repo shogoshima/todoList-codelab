@@ -69,7 +69,7 @@ export function newEnv() {
             // escreve no localStorage em qual página o usuário está agr
             cookie('env', nameId);
             display();
-            console.log('env: ', nameId);
+            // console.log('env: ', nameId);
             document.querySelector(`#env_button-${nameId}`).classList.add("selected");
         }
     })

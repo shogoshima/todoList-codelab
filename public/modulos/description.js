@@ -9,7 +9,7 @@ export function description(event) {
 
     // pegar nome da classe que ativou o evento
     let classe = event.target.className.split(' ')[0];
-    console.log(classe);
+    // console.log(classe);
     // caso a classe não seja o botão clicado, nada acontece
     if (classe != "more" && classe != "arrow")
         return 0;

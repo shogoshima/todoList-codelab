@@ -24,7 +24,7 @@ export function add() {
     div.setAttribute('id', 'task-' + id);
     div.setAttribute('class', 'task');
     let taskInfo = `<input class="checkbox" id="checkbox-${id}" type="checkbox">
-                    <input class="task_name" id="task_name-${id}" placeholder="Tarefa" onClick="this.setSelectionRange(0, this.value.length)" autocomplete="off"/>
+                    <input class="task_name" id="task_name-${id}" onClick="this.setSelectionRange(0, this.value.length)" autocomplete="off"/>
                     <button class="more" id="more-${id}">
                     <img class="arrow" id="arrow-${id}" src="./img/down-arrow.png"></button>
                     <input class="date" id="date-${id}" type="date">
@@ -75,7 +75,7 @@ export function add() {
     // se eu não fizer isso, os dados no localStorage vão continuar sendo os antigos
     // e quando atualizo a página não vou conseguir ver as tasks que tinha criado nessa função
     // console.log(dados);
-    console.log("dados atualizados: ", dados);
+    // console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);
 }

@@ -22,6 +22,6 @@ export function displayEnv() {
         // nesse caso, eu coloco antes do elemento do botão
         botao.parentNode.insertBefore(div, botao);
     }
-    document.querySelector(`#env_button-${activeEnv}`).classList.toggle("selected");
+    document.querySelector(`#env_button-${activeEnv}`).classList.add("selected");
     document.querySelector(".envs").style = "display:flex";
 }

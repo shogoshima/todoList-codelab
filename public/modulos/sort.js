@@ -45,7 +45,7 @@ export function sort() {
         add(user);
     })
 
-    console.log("dados atualizados: ", dados);
+    // console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);
 } 

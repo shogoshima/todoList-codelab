@@ -17,7 +17,7 @@ export function changeEnv(event) {
     // seta o novo env para o que o usuário clicou, e da display
     cookie('env', name);
     display();
-    console.log('env: ', name);
+    // console.log('env: ', name);
     //document.querySelector("#pag_atual").innerHTML = `Você está em: ${name}`;
 
     document.querySelector(`#env_button-${name}`).classList.add("selected");

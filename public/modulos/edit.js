@@ -51,7 +51,7 @@ export function edit(event) {
         lista[index].completo = document.querySelector(`#checkbox-${taskId}`).checked;
         // se for 'true', entao vai rodar o de baixo. senao, o outro roda
         if (lista[index].completo) {
-            // coloca um risco no texto
+            // coloca um risco no texto se tiver algo escrito
             document.querySelector(`#task_name-${taskId}`).classList.add("riscado");
 
             // atualiza na lista de progresso e mostra o progresso atualizado na barra
@@ -77,7 +77,7 @@ export function edit(event) {
     }
 
     // passo os dados atualizados pro banco de dados
-    console.log("dados atualizados: ", dados);
+    // console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);
 }
@@ -128,7 +128,7 @@ export function remove(event) {
     
     // apaga o objeto selecionado da lista e atualiza no banco de dados
     lista.splice(index, 1);
-    console.log("dados atualizados: ", dados);
+    // console.log("dados atualizados: ", dados);
     dados = JSON.stringify(dados);
     localStorage.setItem(user, dados);
 }

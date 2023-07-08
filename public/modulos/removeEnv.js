@@ -11,7 +11,7 @@ function nextEnv(user, newEnv) {
     // seta o novo env para o que o usuário clicou, e da display
     cookie('env', newEnv);
     display();
-    console.log('env: ', newEnv);
+    // console.log('env: ', newEnv);
 
     // deixa o botao da categoria selecionada clara
     displayEnv();
@@ -69,7 +69,7 @@ export function removeEnv(user, env, progresso) {
         listaProgresso.splice(envNum, 1);
         let newEnv = Object.keys(todolist)[0];
 
-        console.log("dados atualizados: ", dados);
+        // console.log("dados atualizados: ", dados);
         dados = JSON.stringify(dados);
         localStorage.setItem(user, dados);
         nextEnv(user, newEnv);

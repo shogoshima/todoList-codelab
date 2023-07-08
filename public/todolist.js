@@ -12,18 +12,18 @@ import { logout } from './modulos/logout.js';
 // para pegar o cookie que foi criado na aba de login.
 // Pra conseguir pegar o nome do usuário que logou na aba de login
 let user = getCookie('logado');
-console.log("user: ", user);
+// console.log("user: ", user);
 if (!user)
     window.location.href = "/index.html";
 
 // pega o nome do espaço em que o usuário está
 let env = getCookie('env');
 // document.querySelector("#pag_atual").innerHTML = `Você está em: ${env}`;
-console.log("env: ", env);
+// console.log("env: ", env);
 
 // Pra mostrar q assim conseguimos pegar dados do usuario no localStorage
 let dados = JSON.parse(localStorage.getItem(user));
-console.log("dados:", dados);
+// console.log("dados:", dados);
 
 // toda vez que faço refresh na página vai rodar essa função
 // Pra mostrar as listas que estavam salvas no localStorage
