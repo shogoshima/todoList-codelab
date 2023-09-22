@@ -8,6 +8,8 @@
 
 ### Este projeto foi desenvolvido como parte do onboarding do grupo de extensão Codelab São Carlos.
 
+link to site: https://code-todo.vercel.app
+
 ## Pré-requisitos
 
 Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
